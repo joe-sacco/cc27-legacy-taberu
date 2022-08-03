@@ -1,31 +1,32 @@
+require("dotenv").config({
+  path: "../.env.local",
+});
+
 module.exports = {
   development: {
     client: "pg",
     connection: {
-      user: "Kyle",
-      password: null,
-      database: "taberu",
+      database: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
     },
     migrations: {
-      directory: "./db/migrations",
+      // have to be in db to create migrations
+      directory: "./knex/migrations",
     },
-    seeds: {
-      directory: "./db/seeds",
-    },
+    seeds: { directory: "./knex/seeds" },
   },
   production: {
     client: "pg",
     connection: {
-      host: dprocess.env.HOST,
-      user: process.env.USER,
-      password: process.env.PASSWORD,
-      database: process.env.DATABASE,
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
     },
     migrations: {
-      directory: __dirname + "/db/migrations",
+      directory: "./data/migrations",
     },
     seeds: {
-      directory: __dirname + "/db/migrations",
+      directory: "./data/seeds",
     },
   },
 };
