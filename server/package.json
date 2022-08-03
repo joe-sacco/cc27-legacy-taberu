@@ -6,7 +6,10 @@
   "scripts": {
     "test": "mocha --exit",
     "start": "node server",
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "migrate-latest": "npx knex migrate:latest --knexfile db/knexfile.js",
+    "migrate-down": "npx knex migrate:rollback --all --knexfile db/knexfile.js",
+    "seed-data": "npx knex seed:run --knexfile db/knexfile.js"
   },
   "keywords": [],
   "author": "",
