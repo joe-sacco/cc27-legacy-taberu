@@ -26,10 +26,10 @@ module.exports = {
       ssl: { rejectUnauthorized: false },
     },
     migrations: {
-      directory: "./knex/migrations",
+      directory: "./db/knex/migrations",
     },
     seeds: {
-      directory: "./knex/seeds",
+      directory: "./db/knex/seeds",
     },
   },
 };
