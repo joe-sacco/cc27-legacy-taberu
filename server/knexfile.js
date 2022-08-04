@@ -6,15 +6,18 @@ module.exports = {
   development: {
     client: "pg",
     connection: {
-      database: process.env.DB_NAME,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
+      database: "taberu",
+      user: "postgres",
+      password: "zoudatabase",
+      // database: process.env.DB_NAME,
+      // user: process.env.DB_USER,
+      // password: process.env.DB_PASSWORD,
     },
     migrations: {
       // have to be in db to create migrations
-      directory: "./knex/migrations",
+      directory: "./db/knex/migrations",
     },
-    seeds: { directory: "./knex/seeds" },
+    seeds: { directory: "./db/knex/seeds" },
   },
   production: {
     client: "pg",
