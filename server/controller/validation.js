@@ -25,7 +25,7 @@ module.exports = {
     }
   },
   
-  validateCredentials(recipeInfo) {
+  validateNewRecipe(recipeInfo) {
     if (recipeInfo.hasOwnProperty("email")) {
       return true;
     } else {
