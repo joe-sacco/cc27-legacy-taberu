@@ -1,2 +1,2 @@
 web: npm start
-release: npm run migrate
+release: npm run migrate && npm run seed
