@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "mocha --exit",
@@ -24,5 +23,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
 }
