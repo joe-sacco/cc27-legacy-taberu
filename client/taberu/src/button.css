@@ -1,0 +1,17 @@
+
+
+.TopChild .button {
+  background: rgb(42, 176, 211);
+  border-radius: 24px;
+  width: 322px;
+  height: 205.2px;
+  font-size: 4.0rem;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.TopChild .button a{
+  display: block;
+  padding: 24% 0;
+}
