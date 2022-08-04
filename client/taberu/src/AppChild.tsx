@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './Header';
 import ReactDOM from "react-dom";
+import Header from './components/Header';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import LoginChild from './LoginChild';
-import './Reset.css';
+import './components/Reset.css';
 import './App.css';
-import './Header.css';
-import './Text.css';
+import './components/Header.css';
+import './components/Text.css';
 
 
 function AppChild() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import  ButtonChild from './ButtonChild';
-import './images.css';
+import  ButtonChild from './components/ButtonChild';
+import './components/images.css';
 import topImage from './images/bg_top.png';
 
 function LoginChild() {
