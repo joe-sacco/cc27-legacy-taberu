@@ -12,7 +12,7 @@ function LoginChild() {
           <img src= {topImage} alt="taberu" />
         </div>
       </main>
-       <ButtonChild link={'#'} text={'Let’s Tap!'} />
+       <ButtonChild link={'/MenuChild'} text={'Let’s Tap!'} />
     </div>
   );
 }
