@@ -1,17 +1,21 @@
 import React from 'react';
-import  ButtonChild from './components/Button';
 import './App.css';
-import  bg_top from './images/bg_top.png';
 
 function OwnerLogin() {
   return (
-    <div className="ownerLogin">
+    <div className="ownerRegist">
+      <h1>taberu</h1>
       <main>
-        <h1 className='logo'>taberu</h1>
-        <img src={ bg_top } alt="taberu" />
+        <h1 className='logo'>Login</h1>
+        <form action="/OwnerLoginMain">
+          <label htmlFor="email">E-mail *</label>
+          <input type="email" name="email" id="email" required />
+          <label htmlFor="password">Password *</label>
+          <input type="password" name="password" id="password" required />
+          <button type="submit">Submit</button>
+        </form>
       </main>
-       <ButtonChild link={'/OwnerLoginMain'} text={'Login'} />
-       <ButtonChild link={'/OwnerRegist'} text={'Register'} />
+
     </div>
   );
 }

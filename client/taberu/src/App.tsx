@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import ChildMain from './childMain';
 import ChildDone from './ChildDone';
-import OwnerLogin from './OwnerLogin';
+import OwnerTop from './OwnerTop';
 import OwnerRegist from './OwnerRegist';
+import OwnerLogin from './OwnerLogin';
 import OwnerLoginMain from './OwnerLoginMain';
 import OwnerPost from './OwnerPost';
 import Header from './components/Header';
@@ -19,8 +20,9 @@ function App() {
     <div className="AppChild">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <OwnerLogin /> } />
+          <Route path="/" element={ <OwnerTop /> } />
           <Route path="/OwnerRegist" element={ <OwnerRegist /> } />
+          <Route path="/OwnerLogin" element={ <OwnerLogin /> } />
           <Route path="/OwnerLoginMain" element={
             <>
               <Header />
