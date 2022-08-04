@@ -9,8 +9,8 @@ function Header() {
       <label htmlFor="drawer_input" className="drawer_open"><span></span></label>
       <nav className="nav_content">
         <ul className="nav_list">
-            <li className="nav_item"><a href="">Children</a></li>
-            <li className="nav_item"><a href="">Recipes</a></li>
+            <li className="nav_item"><a href="/OwnerLoginMain">Top</a></li>
+            <li className="nav_item"><a href="/OwnerPost">Recipes</a></li>
             <li className="nav_item"><a href="">Planned Menus</a></li>
           </ul>
       </nav>

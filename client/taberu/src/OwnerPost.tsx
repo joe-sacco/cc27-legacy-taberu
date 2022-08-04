@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from './components/Header';
+import './components/Header.css';
 import './App.css';
 
 function OwnerPost() {
   return (
     <div className="OwnerPost">
+     <Header />
       <h1>taberu</h1>
       <main>
         <h1 className='logo'>Register</h1>
