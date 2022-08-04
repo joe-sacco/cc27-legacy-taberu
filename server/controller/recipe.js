@@ -1,5 +1,5 @@
 const accountModel = require("../model/recipe");
-const dataValidated = require("./validation");
+const validator = require("./validation");
 
 module.exports = {
   async createRecipe(req, res) {
