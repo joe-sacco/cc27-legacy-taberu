@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import TopChild from './TopChild';
+import TopChild from './LoginChild';
 import './Reset.css';
 import './App.css';
 import './Header.css';
