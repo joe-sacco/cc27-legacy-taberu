@@ -25,8 +25,19 @@ module.exports = {
       if (!associatedAccount) {
         res.status(404).send("ACCOUNT NOT FOUND");
       } else {
-        res.status(201).json({ id: associatedAccount.id });
+        res.status(200).json({ id: associatedAccount.id });
       }
+    }
+  },
+
+  async checkPinCode(req, res) {
+    const idAndPin = await req.body;
+    const [foundAccount] = await accountModel.checkPinCode(idAndPin);
+
+    if (!foundAccount) {
+      res.status(404).send("ACCOUNT NOT FOUND. WRONG PINCODE");
+    } else {
+      res.status(200).send("WELCOME TO PARENT PAGE");
     }
   },
 };

@@ -15,4 +15,11 @@ module.exports = {
       .from(ACCOUNT_TABLE)
       .where({ email: data.email, password: data.password });
   },
+
+  checkPinCode(data) {
+    return knex
+      .select("*")
+      .from(ACCOUNT_TABLE)
+      .where({ id: data.id, pincode: data.pincode });
+  },
 };
