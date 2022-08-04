@@ -1,18 +1,17 @@
 import React from 'react';
-import Header from './components/Header';
-import './components/Header.css';
 import './App.css';
 
 function OwnerRegist() {
   return (
     <div className="ownerRegist">
-      <Header />
       <h1>taberu</h1>
       <main>
         <h1 className='logo'>Register</h1>
-        <form action="/">
-          <label htmlFor="name">Name *</label>
-          <input type="text" name="name" id="name" required />
+        <form action="/OwnerLoginMain">
+          <label htmlFor="lastname">Last Name *</label>
+          <input type="text" name="name" id="lastname" required />
+          <label htmlFor="firstname">First Name *</label>
+          <input type="text" name="name" id="firstname" required />
           <label htmlFor="email">E-mail *</label>
           <input type="email" name="email" id="email" required />
           <label htmlFor="password">Password *</label>
