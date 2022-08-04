@@ -10,7 +10,7 @@ import './components/Header.css';
 import './components/Text.css';
 
 
-function AppChild() {
+function App() {
   return (
     <div className="AppChild">
       <Header />
@@ -25,4 +25,4 @@ function AppChild() {
   );
 }
 
-export default AppChild;
+export default App;
