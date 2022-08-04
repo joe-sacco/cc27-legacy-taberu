@@ -4,7 +4,7 @@ const validator = require("./validation");
 module.exports = {
   async createFamily(req, res) {
     const familyInfo = await req.body;
-    if (validator.validateNewAccount(familyInfo)) {
+    if (validator.validateNewFamily(familyInfo)) {
       await familyModel.createFamily(familyInfo);
       res.status(201).send("FAMILY ADDED");
     } else {
