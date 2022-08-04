@@ -24,4 +24,12 @@ module.exports = {
       return false;
     }
   },
+  
+  validateCredentials(recipeInfo) {
+    if (recipeInfo.hasOwnProperty("email")) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 };
