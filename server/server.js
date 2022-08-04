@@ -14,3 +14,6 @@ app.listen(PORT, () => {
 
 const accountRouter = require("./routes/account");
 app.use("/account", accountRouter);
+
+const recipeRouter = require("./routes/recipe");
+app.use("/recipe", recipeRouter);
