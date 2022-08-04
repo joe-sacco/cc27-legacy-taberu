@@ -4,5 +4,5 @@
  */
  exports.seed = async function(knex) {
   // Deletes ALL existing entries that has primary keys
-  await knex.raw('TRUNCATE account, family, recipe, ingredients RESTART IDENTITY CASCADE');
+  await knex.raw('TRUNCATE account, family, recipe, ingredient RESTART IDENTITY CASCADE');
 };
