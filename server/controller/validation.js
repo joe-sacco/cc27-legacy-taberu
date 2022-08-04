@@ -32,4 +32,15 @@ module.exports = {
       return false;
     }
   },
+  
+  validateNewFamily(faimlyInfo) {
+    if (
+      faimlyInfo.hasOwnProperty("first_name") &&
+      faimlyInfo.hasOwnProperty("last_name")
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 };
