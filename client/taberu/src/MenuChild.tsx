@@ -1,5 +1,5 @@
 import React from 'react';
-import  ButtonChild from './ButtonChild';
+import  ButtonChild from './components/ButtonChild';
 
 function MenuChild() {
   return (
