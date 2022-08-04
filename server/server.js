@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 
 app.get("/api", (req, res) => {
-    res.status(354).send();
+    res.status(354).send("WELCOME TO TABERU SERVER 😋");
 })
 
 app.listen(PORT, () => {
