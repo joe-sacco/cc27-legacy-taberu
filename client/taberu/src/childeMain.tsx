@@ -3,7 +3,7 @@ import  ButtonChild from './components/ButtonChild';
 import './components/images.css';
 import topImage from './images/bg_top.png';
 
-function LoginChild() {
+function childeMain() {
   return (
     <div className="TopChild">
       <main>
@@ -17,4 +17,4 @@ function LoginChild() {
   );
 }
 
-export default LoginChild;
+export default childeMain;
