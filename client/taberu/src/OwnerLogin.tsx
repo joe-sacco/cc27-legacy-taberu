@@ -11,7 +11,7 @@ function OwnerLogin() {
         <h1 className='logo'>taberu</h1>
         <img src={ bg_top } alt="taberu" />
       </main>
-       <ButtonChild link={'#'} text={'Login'} />
+       <ButtonChild link={'/OwnerLoginMain'} text={'Login'} />
        <ButtonChild link={'/OwnerRegist'} text={'Register'} />
     </div>
   );

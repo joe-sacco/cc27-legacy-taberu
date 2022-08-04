@@ -3,7 +3,7 @@ import './App.css';
 
 function OwnerRegist() {
   return (
-    <div className="ownerLogin">
+    <div className="ownerRegist">
       <h1>taberu</h1>
       <main>
         <h1 className='logo'>Register</h1>
