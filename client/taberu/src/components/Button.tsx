@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 import './button.css';
 
 type Props = {
@@ -6,9 +7,8 @@ type Props = {
   link: string;
 }
 
-
 const ButtonCommon: React.FC<Props> = ({ link, text }) => {
-  return <p className="button"><a href={ link }>{ text }</a></p>
+  return <p className="button"><Link to={ link }>{ text }</Link></p>
 }
   
 export default ButtonCommon;
