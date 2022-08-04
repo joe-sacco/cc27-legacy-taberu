@@ -1,7 +1,5 @@
 import React from 'react';
-import  ButtonChild from './components/ButtonChild';
 import './App.css';
-import  bg_top from './images/bg_top.png';
 
 function OwnerRegist() {
   return (
