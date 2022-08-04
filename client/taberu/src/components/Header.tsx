@@ -14,7 +14,7 @@ function Header() {
             <li className="nav_item"><a href="">Planned Menus</a></li>
           </ul>
       </nav>
-      <p className='date'>2022/08/02</p>
+     <h1 className="logo">taberu</h1>
       </header>
     </div>
   );
