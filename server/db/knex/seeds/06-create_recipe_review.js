@@ -3,7 +3,7 @@
  * @returns { Promise<void> } 
  */
 exports.seed = async function(knex) {
-  // review: 1 = happy, 2 = unhappy
+  // review: 1 = happy, 0 = unhappy
   await knex('recipe_review').insert([
     {account_id: 1, family_id: 1, recipe_id: 1, date: "2022-07-01", review: 1},
     {account_id: 1, family_id: 1, recipe_id: 2, date: "2022-07-01", review: 1},
