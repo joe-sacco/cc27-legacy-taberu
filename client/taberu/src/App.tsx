@@ -6,6 +6,7 @@ import ChildMain from './childMain';
 import ChildDone from './ChildDone';
 import OwnerLogin from './OwnerLogin';
 import OwnerRegist from './OwnerRegist';
+import OwnerLoginMain from './OwnerLoginMain';
 import './components/Reset.css';
 import './App.css';
 import './components/Header.css';
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <OwnerLogin /> } />
           <Route path="/OwnerRegist" element={ <OwnerRegist /> } />
+          <Route path="/OwnerLoginMain" element={ <OwnerLoginMain /> } />
           <Route path="/childMain" element={ <ChildMain /> } />
           <Route path="/ChildDone" element={ <ChildDone /> } />
        </Routes>
