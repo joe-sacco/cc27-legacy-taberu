@@ -4,6 +4,8 @@ import Header from './components/Header';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import ChildMain from './childMain';
 import ChildDone from './ChildDone';
+import OwnerLogin from './OwnerLogin';
+import OwnerRegist from './OwnerRegist';
 import './components/Reset.css';
 import './App.css';
 import './components/Header.css';
@@ -16,7 +18,9 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <ChildMain /> } />
+          <Route path="/" element={ <OwnerLogin /> } />
+          <Route path="/OwnerRegist" element={ <OwnerRegist /> } />
+          <Route path="/childMain" element={ <ChildMain /> } />
           <Route path="/ChildDone" element={ <ChildDone /> } />
        </Routes>
       </BrowserRouter>
