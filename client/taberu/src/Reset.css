@@ -27,6 +27,7 @@ html {
   /* 2 */
   -webkit-tap-highlight-color: transparent;
   /* 3*/
+  box-sizing: border-box;
 }
 
 /* Sections */

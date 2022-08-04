@@ -1,0 +1,15 @@
+.mainVisual {
+  width: 460px;
+  height: 460px;
+  line-height: 400px;
+  margin: 60px auto 80px;
+  text-align: center;
+  border-radius: 50%;
+  background: #fff no-repeat center center;
+
+}
+
+.mainVisual img {
+  width: 360px;
+  text-align: center;
+}
