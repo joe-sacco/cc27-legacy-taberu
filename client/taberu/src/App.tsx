@@ -9,7 +9,7 @@ import OwnerRegist from "./OwnerRegist";
 import OwnerLogin from "./OwnerLogin";
 import OwnerLoginMain from "./OwnerLoginMain";
 import OwnerPost from "./OwnerPost";
-import OwnerAdd from "./OwnerAdd";
+import ownerFamily from "./ownerFamily";
 import Header from "./components/Header";
 import "./components/Reset.css";
 import "./App.css";
@@ -43,11 +43,11 @@ function App() {
             }
           />
           <Route
-            path="/OwnerAdd"
+            path="/ownerFamily"
             element={
               <>
                 <Header />
-                <OwnerAdd />
+                <ownerFamily />
               </>
             }
           />

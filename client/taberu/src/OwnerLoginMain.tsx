@@ -10,7 +10,7 @@ function OwnerLoginMain() {
           <p>Today’s recipe is</p>
           <h1>Curry!!!</h1>
         </div>
-      <ButtonChild link={'/OwnerAdd'} text={'> Family'} />
+      <ButtonChild link={'/ownerFamily'} text={'> Family'} />
        <ButtonChild link={'/OwnerPost'} text={'> Recipes'} />
       </main>
 

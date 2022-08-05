@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function OwnerAdd() {
+function ownerFamily() {
   return (
     <div className="ownerRegist">
       <h1>taberu</h1>
@@ -24,4 +24,4 @@ function OwnerAdd() {
   );
 }
 
-export default OwnerAdd;
+export default ownerFamily;

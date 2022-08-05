@@ -11,7 +11,7 @@ function Header() {
       <nav className="nav_content">
         <ul className="nav_list">
             <li className="nav_item"><Link to="/OwnerLoginMain">Top</Link></li>
-            <li className="nav_item"><Link to="/OwnerAdd">Family</Link></li>
+            <li className="nav_item"><Link to="/ownerFamily">Family</Link></li>
             <li className="nav_item"><Link to="/OwnerPost">Recipes</Link></li>
             <li className="nav_item"><Link to="#">Planned Menus</Link></li>
           </ul>
