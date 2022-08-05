@@ -7,8 +7,8 @@ type Props = {
   link: string;
 }
 
-const ButtonCommon: React.FC<Props> = ({ link, text }) => {
+const buttonCommon: React.FC<Props> = ({ link, text }) => {
   return <p className="button"><Link to={ link }>{ text }</Link></p>
 }
   
-export default ButtonCommon;
+export default buttonCommon;

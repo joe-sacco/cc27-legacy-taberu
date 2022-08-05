@@ -1,5 +1,5 @@
 import React from 'react';
-import  ButtonChild from './components/Button';
+import  ButtonChild from './components/button';
 import './components/images.css';
 
 
