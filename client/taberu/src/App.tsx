@@ -14,10 +14,10 @@ import './components/Reset.css';
 import './App.css';
 import './components/Text.css';
 import './components/Header.css';
-
+import { resolve } from 'path';
 
 function App() {
-  return (
+    return (
     <div className="AppChild">
       <BrowserRouter>
         <Routes>
@@ -43,8 +43,7 @@ function App() {
             </>
           }/>
           <Route path="/childMain" element={ <ChildMain /> } />
-          <Route path="/ChildDone" element={ <ChildDone /> } />
-  
+          <Route path="/ChildDone" element={ <ChildDone /> } />  
        </Routes>
       </BrowserRouter>
       
