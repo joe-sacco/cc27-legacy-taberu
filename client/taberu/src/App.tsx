@@ -5,7 +5,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import childMain from "./childMain";
 import childDone from "./childDone";
 import OwnerTop from "./OwnerTop";
-import OwnerRegist from "./OwnerRegist";
+import ownerRegist from "./ownerRegist";
 import ownerLogin from "./ownerLogin";
 import ownerLoginMain from "./ownerLoginMain";
 import ownerPost from "./ownerPost";
@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<OwnerTop />} />
-          <Route path="/OwnerRegist" element={<OwnerRegist />} />
+          <Route path="/ownerRegist" element={<ownerRegist />} />
           <Route path="/ownerLogin" element={<ownerLogin />} />
           <Route
             path="/ownerLoginMain"

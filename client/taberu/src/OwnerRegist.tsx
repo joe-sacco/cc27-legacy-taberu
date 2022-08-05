@@ -19,7 +19,7 @@ interface test {
 //   // },
 // });
 
-function OwnerRegist() {
+function ownerRegist() {
   const {
     register,
     handleSubmit,
@@ -59,4 +59,4 @@ function OwnerRegist() {
   );
 }
 
-export default OwnerRegist;
+export default ownerRegist;
