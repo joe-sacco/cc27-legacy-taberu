@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("recipe_menu", function (table) {
+  return knex.schema.createTable("daily_menu", function (table) {
     table
       .integer("account_id")
       .notNullable()
@@ -28,5 +28,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable("recipe_menu");
+  return knex.schema.dropTable("daily_menu");
 };
