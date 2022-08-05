@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -17,7 +17,6 @@ import "./components/Text.css";
 import "./components/Header.css";
 
 function App() {
-
   return (
     <div className="AppChild">
       <BrowserRouter>
