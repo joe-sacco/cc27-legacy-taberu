@@ -9,7 +9,7 @@ module.exports = {
       // database: "taberu",
       // user: "postgres",
       // password: "zoudatabase",
-      database: process.env.DB_NAME,
+      database: "taberu",
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
     },
