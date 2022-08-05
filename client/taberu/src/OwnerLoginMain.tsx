@@ -2,7 +2,7 @@ import React from 'react';
 import  ButtonChild from './components/button';
 import './App.css';
 
-function OwnerLoginMain() {
+function ownerLoginMain() {
   return (
     <div className="ownerLoginMain">
       <main>
@@ -18,4 +18,4 @@ function OwnerLoginMain() {
   );
 }
 
-export default OwnerLoginMain;
+export default ownerLoginMain;

@@ -13,7 +13,7 @@ function OwnerPost() {
           <input type="file" name="photo" id="" />
         </form>
         <ul>
-          <li><a href="/OwnerLoginMain">&gt; Top</a></li>
+          <li><a href="/ownerLoginMain">&gt; Top</a></li>
           <li><a href="#">&gt; Register</a></li>
         </ul>
       </main>

@@ -7,7 +7,7 @@ function ownerFamily() {
       <h1>taberu</h1>
       <main>
         <h1 className='logo'>Register</h1>
-        <form action="/OwnerLoginMain">
+        <form action="/ownerLoginMain">
           <label htmlFor="lastname">Last Name *</label>
           <input type="text" name="name" id="lastname" required />
           <label htmlFor="firstname">First Name *</label>

@@ -7,7 +7,7 @@ function ownerLogin() {
       <h1>taberu</h1>
       <main>
         <h1 className='logo'>Login</h1>
-        <form action="/OwnerLoginMain">
+        <form action="/ownerLoginMain">
           <label htmlFor="email">E-mail *</label>
           <input type="email" name="email" id="email" required />
           <label htmlFor="password">Password *</label>

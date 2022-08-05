@@ -7,7 +7,7 @@ import childDone from "./childDone";
 import OwnerTop from "./OwnerTop";
 import OwnerRegist from "./OwnerRegist";
 import ownerLogin from "./ownerLogin";
-import OwnerLoginMain from "./OwnerLoginMain";
+import ownerLoginMain from "./ownerLoginMain";
 import OwnerPost from "./OwnerPost";
 import ownerFamily from "./ownerFamily";
 import Header from "./components/Header";
@@ -25,11 +25,11 @@ function App() {
           <Route path="/OwnerRegist" element={<OwnerRegist />} />
           <Route path="/ownerLogin" element={<ownerLogin />} />
           <Route
-            path="/OwnerLoginMain"
+            path="/ownerLoginMain"
             element={
               <>
                 <Header />
-                <OwnerLoginMain />
+                <ownerLoginMain />
               </>
             }
           />
