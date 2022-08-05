@@ -17,7 +17,7 @@ module.exports = {
       res.status(404).send("THERE ARE NO RECIPES AVAILABLE");
     } else {
       const allRecipes = await recipeModel.getRecipe();
-      res.status(200).send(allRecipes);
+      res.status(200).json(allRecipes);
     }
   },
 };
