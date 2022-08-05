@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import ChildMain from "./childMain";
+import childMain from "./childMain";
 import childDone from "./childDone";
 import OwnerTop from "./OwnerTop";
 import OwnerRegist from "./OwnerRegist";
@@ -51,7 +51,7 @@ function App() {
               </>
             }
           />
-          <Route path="/childMain" element={<ChildMain />} />
+          <Route path="/childMain" element={<childMain />} />
           <Route path="/childDone" element={<childDone />} />
         </Routes>
       </BrowserRouter>

@@ -4,7 +4,7 @@ import dummy from './images/dummy.png';
 import like from './images/like.png';
 import dislike from './images/dislike.png';
 
-function ChildMain() {
+function childMain() {
   return (
     <div className="TopChild">
       <main>
@@ -24,4 +24,4 @@ function ChildMain() {
   );
 }
 
-export default ChildMain;
+export default childMain;
