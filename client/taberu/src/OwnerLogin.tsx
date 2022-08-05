@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function OwnerLogin() {
+function ownerLogin() {
   return (
     <div className="ownerRegist">
       <h1>taberu</h1>
@@ -20,4 +20,4 @@ function OwnerLogin() {
   );
 }
 
-export default OwnerLogin;
+export default ownerLogin;
