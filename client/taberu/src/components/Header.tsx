@@ -12,7 +12,7 @@ function Header() {
         <ul className="nav_list">
             <li className="nav_item"><Link to="/ownerLoginMain">Top</Link></li>
             <li className="nav_item"><Link to="/ownerFamily">Family</Link></li>
-            <li className="nav_item"><Link to="/OwnerPost">Recipes</Link></li>
+            <li className="nav_item"><Link to="/ownerPost">Recipes</Link></li>
             <li className="nav_item"><Link to="#">Planned Menus</Link></li>
           </ul>
       </nav>
