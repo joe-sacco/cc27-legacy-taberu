@@ -11,4 +11,13 @@ module.exports = {
       res.status(406).send("BAD DATA. TRY AGAIN");
     }
   },
+  async getRecipe(req, res) {
+    const recipes = await req.body;
+    if (recipes.length === 0) {
+      res.status(404).send("THERE ARE NO RECIPES AVAILABLE");
+    } else {
+      const allRecipes = await recipeModel.getRecipe();
+      res.status(200).send(allRecipes);
+    }
+  },
 };
