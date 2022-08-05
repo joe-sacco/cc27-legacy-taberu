@@ -1,15 +1,12 @@
 require("dotenv").config({
-  path: "../.env.local",
+  path: ".env.local",
 });
 
 module.exports = {
   development: {
     client: "pg",
     connection: {
-      // database: "taberu",
-      // user: "postgres",
-      // password: "zoudatabase",
-      database: "taberu",
+      database: process.env.DB_NAME,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
     },
