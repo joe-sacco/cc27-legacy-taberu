@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const recipeController = require("../controller/family");
+const familyController = require("../controller/family");
 
-router.post("/account/:id/family", familyController.createFamily);
+router.post("/", familyController.createFamily);
 
 module.exports = router;
