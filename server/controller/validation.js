@@ -26,7 +26,7 @@ module.exports = {
   },
   
   validateNewRecipe(recipeInfo) {
-    if (recipeInfo.hasOwnProperty("email")) {
+    if (recipeInfo.hasOwnProperty("name")) {
       return true;
     } else {
       return false;
@@ -35,6 +35,7 @@ module.exports = {
   
   validateNewFamily(faimlyInfo) {
     if (
+      faimlyInfo.hasOwnProperty("account_id") &&
       faimlyInfo.hasOwnProperty("first_name") &&
       faimlyInfo.hasOwnProperty("last_name")
     ) {
