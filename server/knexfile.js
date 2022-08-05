@@ -6,12 +6,12 @@ module.exports = {
   development: {
     client: "pg",
     connection: {
-      // database: "taberu",
-      // user: "postgres",
-      // password: "zoudatabase",
       database: "taberu",
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
+      user: "postgres",
+      password: "zoudatabase",
+      // database: "taberu",
+      // user: process.env.DB_USER,
+      // password: process.env.DB_PASSWORD,
     },
     migrations: {
       // have to be in db to create migrations

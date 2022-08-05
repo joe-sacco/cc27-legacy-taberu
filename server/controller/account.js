@@ -3,7 +3,9 @@ const validator = require("./validation");
 
 module.exports = {
   async createAccount(req, res) {
-    const accountInfo = await req.body;
+    const accountInfo = await req.body.body;
+    console.log("🟥🟥🟥🟥🟥🟥🟥🟥");
+    console.log(accountInfo);
     if (validator.validateNewAccount(accountInfo)) {
       await accountModel.createAccount(accountInfo);
       res.status(201).send("ACCOUNT CREATED");
