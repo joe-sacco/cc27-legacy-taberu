@@ -1,8 +1,14 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
+const allowedOrigins = ['http://localhost:3000','https://taberu-server.herokuapp.com/account'];
+const options = {
+  origin: allowedOrigins
+};
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.status(200).send("WELCOME TO TABERU SERVER 😋");

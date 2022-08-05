@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function OwnerRegist() {
+function OwnerAdd() {
   return (
     <div className="ownerRegist">
       <h1>taberu</h1>
@@ -12,18 +12,16 @@ function OwnerRegist() {
           <input type="text" name="name" id="lastname" required />
           <label htmlFor="firstname">First Name *</label>
           <input type="text" name="name" id="firstname" required />
-          <label htmlFor="email">E-mail *</label>
-          <input type="email" name="email" id="email" required />
-          <label htmlFor="password">Password *</label>
-          <input type="password" name="password" id="password" required />
-          <label htmlFor="pincode">Pincode *</label>
-          <input type="number" name="pincode" id="pincode" required />
-          <button type="submit">Submit</button>
+          <button>Add</button>
         </form>
       </main>
+      <section>
+        <h2>Family's Name</h2>
+        <p>Hasegawa Ayumi</p>
+      </section>
 
     </div>
   );
 }
 
-export default OwnerRegist;
+export default OwnerAdd;
