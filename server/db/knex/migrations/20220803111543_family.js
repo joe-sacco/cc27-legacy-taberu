@@ -4,7 +4,7 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable("family", function (table) {
-    table.integer("id").unique().notNullable();
+    table.increments("id").primary();
     table
       .integer("account_id")
       .notNullable()
@@ -14,7 +14,6 @@ exports.up = function (knex) {
     table.string("first_name", 32).notNullable();
     table.string("last_name", 32).notNullable();
 
-    table.primary(["id", "account_id"]);
   });
 };
 
