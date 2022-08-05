@@ -1,2 +1,2 @@
 web: npm start
-release: heroku pg:reset DATABASE_URL && npm run migrate $$ npm run seed
+release: npm run migrate $$ npm run seed
