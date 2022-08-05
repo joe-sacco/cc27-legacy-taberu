@@ -24,7 +24,7 @@ module.exports = {
       return false;
     }
   },
-  
+
   validateNewRecipe(recipeInfo) {
     if (recipeInfo.hasOwnProperty("name")) {
       return true;
@@ -32,13 +32,20 @@ module.exports = {
       return false;
     }
   },
-  
+
   validateNewFamily(faimlyInfo) {
     if (
       faimlyInfo.hasOwnProperty("account_id") &&
       faimlyInfo.hasOwnProperty("first_name") &&
       faimlyInfo.hasOwnProperty("last_name")
     ) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  validateFamilyAccountId(accountId) {
+    if (typeof accountId === "number") {
       return true;
     } else {
       return false;
