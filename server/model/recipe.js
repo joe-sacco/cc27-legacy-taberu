@@ -8,4 +8,10 @@ module.exports = {
   createRecipe(data) {
     return knex.insert(data).into(RECIPE_TABLE);
   },
+
+  getRecipe() {
+    return knex
+    .select("*")
+    .from(RECIPE_TABLE)
+  }
 };
