@@ -8,4 +8,11 @@ module.exports = {
   createFamily(data) {
     return knex.insert(data).into(FAMILY_TABLE);
   },
+
+  getFamily(receivedId) {
+    return knex
+      .select("*")
+      .from(FAMILY_TABLE)
+      .where({ account_id: receivedId });
+  },
 };
