@@ -4,7 +4,7 @@ import dummy from './images/dummy.png';
 import like from './images/like.png';
 import dislike from './images/dislike.png';
 
-function childMain() {
+function ChildMain() {
   return (
     <div className="TopChild">
       <main>
@@ -12,10 +12,10 @@ function childMain() {
         <div className='mainVisual'>
           <img src= { dummy } alt="taberu" />
         </div>
-        <form method="POST" action="./childDone.tsx">
+        <form method="POST" action="./ChildDone.tsx">
           <ul>
-            <li><a href="/childDone"><img src={ like } alt="like" /></a></li>
-            <li><a href="/childDone"><img src={ dislike } alt="dislike" /></a></li>
+            <li><a href="/ChildDone"><img src={ like } alt="like" /></a></li>
+            <li><a href="/ChildDone"><img src={ dislike } alt="dislike" /></a></li>
           </ul>
       </form>
 
@@ -24,4 +24,4 @@ function childMain() {
   );
 }
 
-export default childMain;
+export default ChildMain;

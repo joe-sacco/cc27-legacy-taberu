@@ -2,9 +2,9 @@ import React from 'react';
 import  ButtonChild from './components/button';
 import './App.css';
 
-function childMenu() {
+function ChildMenu() {
   return (
-    <div className="childMenu">
+    <div className="ChildMenu">
       <p>What’s your name??</p>
       <main>
         <h1 className='logo'>taberu</h1>
@@ -15,4 +15,4 @@ function childMenu() {
   );
 }
 
-export default childMenu;
+export default ChildMenu;

@@ -2,14 +2,14 @@ import React from "react";
 import axios from "axios";
 import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import childMain from "./childMain";
-import childDone from "./childDone";
-import ownerTop from "./ownerTop";
-import ownerRegist from "./ownerRegist";
-import ownerLogin from "./ownerLogin";
-import ownerLoginMain from "./ownerLoginMain";
-import ownerPost from "./ownerPost";
-import ownerFamily from "./ownerFamily";
+import ChildMain from "./ChildMain";
+import ChildDone from "./ChildDone";
+import OwnerTop from "./OwnerTop";
+import OwnerRegist from "./OwnerRegist";
+import OwnerLogin from "./OwnerLogin";
+import OwnerLoginMain from "./OwnerLoginMain";
+import OwnerPost from "./OwnerPost";
+import OwnerFamily from "./OwnerFamily";
 import Header from "./components/Header";
 import "./components/Reset.css";
 import "./App.css";
@@ -21,38 +21,40 @@ function App() {
     <div className="AppChild">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ownerTop />} />
-          <Route path="/ownerRegist" element={<ownerRegist />} />
-          <Route path="/ownerLogin" element={<ownerLogin />} />
+          <Route path="/" element={<OwnerTop />} />
+          <Route path="/OwnerRegist" element={<OwnerRegist />} />
+          <Route path="/O
+      OwnerLogin" element={<O
+      OwnerLogin />} />
           <Route
-            path="/ownerLoginMain"
+            path="/OwnerLoginMain"
             element={
               <>
                 <Header />
-                <ownerLoginMain />
+                <OwnerLoginMain />
               </>
             }
           />
           <Route
-            path="/ownerPost"
+            path="/OwnerPost"
             element={
               <>
                 <Header />
-                <ownerPost />
+                <OwnerPost />
               </>
             }
           />
           <Route
-            path="/ownerFamily"
+            path="/OwnerFamily"
             element={
               <>
                 <Header />
-                <ownerFamily />
+                <OwnerFamily />
               </>
             }
           />
-          <Route path="/childMain" element={<childMain />} />
-          <Route path="/childDone" element={<childDone />} />
+          <Route path="/ChildMain" element={<ChildMain />} />
+          <Route path="/ChildDone" element={<ChildDone />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 
-function ownerFamily() {
+function OwnerFamily() {
   return (
-    <div className="ownerRegist">
+    <div className="OwnerRegist">
       <h1>taberu</h1>
       <main>
         <h1 className='logo'>Register</h1>
-        <form action="/ownerLoginMain">
+        <form action="/OwnerLoginMain">
           <label htmlFor="lastname">Last Name *</label>
           <input type="text" name="name" id="lastname" required />
           <label htmlFor="firstname">First Name *</label>
@@ -24,4 +24,4 @@ function ownerFamily() {
   );
 }
 
-export default ownerFamily;
+export default OwnerFamily;

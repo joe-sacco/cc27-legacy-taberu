@@ -2,20 +2,20 @@ import React from 'react';
 import  ButtonChild from './components/button';
 import './App.css';
 
-function ownerLoginMain() {
+function OwnerLoginMain() {
   return (
-    <div className="ownerLoginMain">
+    <div className="OwnerLoginMain">
       <main>
         <div>
           <p>Today’s recipe is</p>
           <h1>Curry!!!</h1>
         </div>
-      <ButtonChild link={'/ownerFamily'} text={'> Family'} />
-       <ButtonChild link={'/ownerPost'} text={'> Recipes'} />
+      <ButtonChild link={'/OwnerFamily'} text={'> Family'} />
+       <ButtonChild link={'/OwnerPost'} text={'> Recipes'} />
       </main>
 
     </div>
   );
 }
 
-export default ownerLoginMain;
+export default OwnerLoginMain;

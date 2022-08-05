@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 
-function ownerPost() {
+function OwnerPost() {
   return (
-    <div className="ownerPost">
+    <div className="OwnerPost">
       <h1>taberu</h1>
       <main>
         <h1 className='logo'>Register</h1>
@@ -22,4 +22,4 @@ function ownerPost() {
   );
 }
 
-export default ownerPost;
+export default OwnerPost;

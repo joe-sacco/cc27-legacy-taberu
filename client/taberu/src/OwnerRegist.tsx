@@ -19,7 +19,7 @@ interface test {
 //   // },
 // });
 
-function ownerRegist() {
+function OwnerRegist() {
   const {
     register,
     handleSubmit,
@@ -33,7 +33,7 @@ function ownerRegist() {
     console.log(data);
   };
   return (
-    <div className="ownerRegist">
+    <div className="OwnerRegist">
       <h1>taberu</h1>
       <main>
         <h1 className="logo">Register</h1>
@@ -59,4 +59,4 @@ function ownerRegist() {
   );
 }
 
-export default ownerRegist;
+export default OwnerRegist;
