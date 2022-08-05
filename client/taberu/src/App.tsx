@@ -1,4 +1,5 @@
-import React from 'react';
+import React , { useEffect } from 'react';
+import axios from 'axios';
 import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import ChildMain from './childMain';
@@ -17,6 +18,29 @@ import './components/Header.css';
 import { resolve } from 'path';
 
 function App() {
+  // const headers = {"email": "tomomik@sample.com"};
+  // axios.get('http://localhost:8080/account', { headers }).then(res => {
+  //   console.log(res.data);
+  // })
+
+const body = {first_name: 'juli', last_name: 'Kugai', email: 'tomomik@sample.com', password: 'password', pincode: 1234, image: null}
+ 
+    axios.post('http://localhost:8080/account', { body }).then(res => {
+      console.log("aaaaasdfasdfdf");
+    console.log(res.data);
+  }).catch(error => {
+    console.log(error.response);
+  
+  })
+
+    //   const requestOptions = {
+    //     method: 'GET',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email: 'tomomik@sample.com' })
+    // };
+    // fetch('http://localhost:8080/account', requestOptions)
+    //     .then(response => console.log(response.json()));
+
     return (
     <div className="AppChild">
       <BrowserRouter>
