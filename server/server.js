@@ -18,5 +18,5 @@ app.use("/account", accountRouter);
 const recipeRouter = require("./routes/recipe");
 app.use("/recipe", recipeRouter);
 
-// const familyRouter = require("./routes/family");
-// app.use("/account/:id/family", familyRouter);
+const familyRouter = require("./routes/family");
+app.use("/account/:id/family", familyRouter);
