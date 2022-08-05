@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "parse-headers": "^2.0.5"
+  }
+}

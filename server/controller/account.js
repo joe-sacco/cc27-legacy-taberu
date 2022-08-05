@@ -3,9 +3,8 @@ const validator = require("./validation");
 
 module.exports = {
   async createAccount(req, res) {
-    const accountInfo = await req.body.body;
-    console.log("🟥🟥🟥🟥🟥🟥🟥🟥");
-    console.log(accountInfo);
+    const accountInfo = await req.body;
+
     if (validator.validateNewAccount(accountInfo)) {
       await accountModel.createAccount(accountInfo);
       res.status(201).send("ACCOUNT CREATED");
@@ -15,7 +14,7 @@ module.exports = {
   },
 
   async authenticateAccount(req, res) {
-    const loginInfo = await req.body;
+    const loginInfo = await req.query;
 
     if (!validator.validateCredentials(loginInfo)) {
       res.status(406).send("BAD DATA. TRY AGAIN");
@@ -33,7 +32,7 @@ module.exports = {
   },
 
   async checkPinCode(req, res) {
-    const idAndPin = await req.body;
+    const idAndPin = await req.query;
     const [foundAccount] = await accountModel.checkPinCode(idAndPin);
 
     if (!foundAccount) {

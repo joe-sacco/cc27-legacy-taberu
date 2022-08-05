@@ -13,7 +13,10 @@ module.exports = {
   },
 
   async getFamily(req, res) {
-    const { account_id } = await req.body;
+    const account_id = (await req.query.account_id)
+      ? Number(req.query.account_id)
+      : undefined;
+
     if (account_id && validator.validateFamilyAccountId(account_id)) {
       const family = await familyModel.getFamily(account_id);
       res.status(200).json(family);
