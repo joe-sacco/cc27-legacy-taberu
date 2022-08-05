@@ -3,7 +3,7 @@ import  ButtonChild from './components/button';
 import './components/images.css';
 
 
-function ChildDone() {
+function childDone() {
   return (
     <div className="TopChild">
       <main>
@@ -14,4 +14,4 @@ function ChildDone() {
   );
 }
 
-export default ChildDone;
+export default childDone;

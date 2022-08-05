@@ -3,7 +3,7 @@ import axios from "axios";
 import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ChildMain from "./childMain";
-import ChildDone from "./ChildDone";
+import childDone from "./childDone";
 import OwnerTop from "./OwnerTop";
 import OwnerRegist from "./OwnerRegist";
 import OwnerLogin from "./OwnerLogin";
@@ -52,7 +52,7 @@ function App() {
             }
           />
           <Route path="/childMain" element={<ChildMain />} />
-          <Route path="/ChildDone" element={<ChildDone />} />
+          <Route path="/childDone" element={<childDone />} />
         </Routes>
       </BrowserRouter>
     </div>
