@@ -23,9 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<OwnerTop />} />
           <Route path="/OwnerRegist" element={<OwnerRegist />} />
-          <Route path="/O
-      OwnerLogin" element={<O
-      OwnerLogin />} />
+          <Route path="/OwnerLogin" element={<OwnerLogin />} />
           <Route
             path="/OwnerLoginMain"
             element={
