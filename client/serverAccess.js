@@ -15,11 +15,11 @@ useEffect(() => {
 //-----------------FOR SIGN-UP-----------------
 useEffect(() => {
   const newAccountInfo = {
-    first_name: "juli",
-    last_name: "Kugai",
-    email: "tomomik@sample.com",
-    password: "password",
-    pincode: 1234,
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    pincode: "",
     image: null,
   };
 
