@@ -27,7 +27,7 @@ const OwnerRecipe: React.FC = () => {
       <main>
         <img src={dummy} alt="" />
         <h2>All Recipes Out There</h2>
-        {allRecipes.map(recipe => {
+        {allRecipes.reverse().map(recipe => {
           return (
             <div key={recipe.id}>
               <p>{recipe.name}</p>
