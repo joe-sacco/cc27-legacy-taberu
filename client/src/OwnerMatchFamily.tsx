@@ -25,7 +25,7 @@ function OwnerMatchFamily() {
     data.pincode = Number(data.pincode);
     // console.log(data);
     // return data;
-    const DB_URL = "http://localhost:8080";
+    const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
     const accountInfo = {
       params: data,
     };
