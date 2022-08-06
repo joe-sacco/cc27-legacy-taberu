@@ -4,11 +4,12 @@ import './App.css';
 
 const DB_URL = "http://localhost:8080"
 // Hardcoded ownerAccount ID
-const obtainedId = 6;
+const obtainedId = 2;
 
 //TO DO::
 //[ ] Implement the DB_URL to switch automatically between localhost and Heroku depending on production/development
 //[ ] Implement a way to catcht the accountOwner's ID
+//[ ] Implement add family function
 
 const OwnerFamily: React.FC = () => {
   const [familyMember, setFamilyMember] = useState<{id: number, account_id: number, first_name: string, last_name: string}[]>([],);
