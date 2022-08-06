@@ -1,7 +1,8 @@
+/*!!!Please copy this DB_URL when you use the server access methods!!!*/
 const DB_URL = "http://localhost:8080"
 
+//-----------------FOR LOGIN-----------------
 useEffect(() => {
-  // FOR LOGIN
   const accountInfo = {
     params: {
       email: "tomh@sample.com",
@@ -11,8 +12,8 @@ useEffect(() => {
   axios.get(`${DB_URL}/account`, accountInfo);
 }, []);
 
+//-----------------FOR SIGN-UP-----------------
 useEffect(() => {
-  // FOR SIGN-UP
   const newAccountInfo = {
     first_name: "juli",
     last_name: "Kugai",
@@ -25,8 +26,8 @@ useEffect(() => {
   axios.post(`${DB_URL}/account`, newAccountInfo);
 }, []);
 
+//-----------------FOR PINCODE-----------------
 useEffect(() => {
-  // FOR PINCODE
   const accountInfo = {
     params: {
       id: 6,
@@ -43,8 +44,8 @@ useEffect(() => {
     .catch((error) => console.log(error.response.data));
 }, []);
 
+//-----------------FOR CREATE FAMILY-----------------
 useEffect(() => {
-  // FOR CREATE FAMILY
   const familyInfo = {
     account_id: 6,
     first_name: "Pikachu",
@@ -53,8 +54,8 @@ useEffect(() => {
   axios.post(`${DB_URL}/account/${familyInfo.account_id}/family`, familyInfo);
 }, []);
 
+//-----------------FOR GET FAMILY-----------------
 useEffect(() => {
-  // FOR GET FAMILY
   const accountId = {
     params: {
       account_id: 6,
@@ -70,17 +71,16 @@ useEffect(() => {
     });
 }, []);
 
+//-----------------FOR CREATE RECIPE-----------------
 useEffect(() => {
-  // FOR CREATE RECIPE
   const familyInfo = {
     name: "Kugai",
   };
   axios.post(`${DB_URL}/recipe`, familyInfo);
 }, []);
 
+//-----------------FOR GET RECIPE-----------------
 useEffect(() => {
-  // FOR GET RECIPE
-
   axios
     .get(`${DB_URL}/recipe`)
     .then((res) => {
