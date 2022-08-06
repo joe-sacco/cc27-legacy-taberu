@@ -5,7 +5,7 @@ import axios from "axios";
 
 interface test {
   last_name: string;
-  firstname: string;
+  first_name: string;
   email: string;
   password: string;
   pincode: number;
@@ -19,7 +19,7 @@ function OwnerRegist() {
   } = useForm<test>({
     defaultValues: {
       last_name: "",
-      firstname: "",
+      first_name: "",
       email: "",
       password: "",
       pincode: undefined,
@@ -42,6 +42,8 @@ function OwnerRegist() {
 
     axios.post(`${DB_URL}/account`, newAccountInfo).then((res) => {
       console.log(res);
+      const responseCode = res.status;
+      // So here we can redirect to LOGIN PAGE if response code is 201;
     });
   };
 
@@ -61,7 +63,7 @@ function OwnerRegist() {
           <input
             type="text"
             id="firstname"
-            {...register("firstname", { required: "this is required" })}
+            {...register("first_name", { required: "this is required" })}
           />
           <label htmlFor="email">E-mail *</label>
           <input
