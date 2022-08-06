@@ -7,20 +7,10 @@ interface test {
   firstname: string;
   email: string;
   password: string;
-  pincode: string;
+  pincode: number;
 }
-// const {
-//   register,
-//   handleSubmit,
-//   formState: { errors },
-// } = useForm<test>({
-//   // defaultValues: {
-//   //   lastname: "",
-//   // },
-// });
 
 function OwnerRegist() {
-  
   const {
     register,
     handleSubmit,
@@ -31,7 +21,7 @@ function OwnerRegist() {
       firstname: "",
       email: "",
       password: "",
-      pincode: "",
+      pincode: undefined,
     },
   });
   const onSubmit = (data: any) => {

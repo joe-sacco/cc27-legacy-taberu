@@ -3,19 +3,17 @@ import "./App.css";
 import { useForm } from "react-hook-form";
 
 interface test {
-  email: string;
-  password: string;
+  pincode: number;
 }
 
-function OwnerLogin() {
+function OwnerMatchFamily() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<test>({
     defaultValues: {
-      email: "",
-      password: "",
+      pincode: undefined,
     },
   });
   const onSubmit = (data: any) => {
@@ -29,23 +27,25 @@ function OwnerLogin() {
       <main>
         <h1 className="logo">Login</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="email">E-mail *</label>
+          <label htmlFor="pincode">Pincode</label>
           <input
-            type="email"
-            id="email"
-            {...register("email", { required: "this is required" })}
-          />
-          <label htmlFor="password">Password *</label>
-          <input
-            type="password"
-            id="password"
-            {...register("password", { required: "this is required" })}
+            type="number"
+            id="pincode"
+            {...register("pincode", { required: "this is required" })}
           />
           <button type="submit">Submit</button>
         </form>
+        <ul>
+          <li>
+            <a href="#">Mizuki</a>
+          </li>
+          <li>
+            <a href="#">Makoto</a>
+          </li>
+        </ul>
       </main>
     </div>
   );
 }
 
-export default OwnerLogin;
+export default OwnerMatchFamily;
