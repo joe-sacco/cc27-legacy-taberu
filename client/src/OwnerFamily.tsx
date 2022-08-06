@@ -4,9 +4,9 @@ import './App.css';
 import { useForm } from "react-hook-form";
 
 // const DB_URL = "https://taberu-server.herokuapp.com" ? "http://localhost:8080";
-const DB_URL = process.env.DB_ENVIRONMENT ? "https://taberu-server.herokuapp.com" : "http://localhost:8080";
+const DB_URL = process.env.ENVIRONMENT ? "https://taberu-server.herokuapp.com" : "http://localhost:8080";
 
-// console.log("🔴🔴🔴🔴🔴", process.env.DB_ENVIRONMENT)
+// console.log("🔴🔴🔴🔴🔴", process.env.ENVIRONMENT)
 // Hardcoded ownerAccount ID
 const obtainedId = 2;
 
