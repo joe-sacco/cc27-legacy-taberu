@@ -1,5 +1,5 @@
 import React from 'react';
-import  ButtonChild from './components/button';
+import  ButtonChild from './components/Button';
 import './App.css';
 
 function OwnerLoginMain() {
