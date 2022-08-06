@@ -6,9 +6,6 @@ module.exports = {
     const accountInfo = await req.body;
     accountInfo.pincode = Number(accountInfo.pincode);
 
-    console.log("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥");
-    console.log(accountInfo);
-
     if (validator.validateNewAccount(accountInfo)) {
       await accountModel.createAccount(accountInfo);
       res.status(201).send("ACCOUNT CREATED");
