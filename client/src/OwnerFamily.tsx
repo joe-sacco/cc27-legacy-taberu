@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios"
 import './App.css';
 
-function OwnerFamily() {
+const DB_URL = "http://localhost:8080"
+// Hardcoded ownerAccount ID
+const obtainedId = 6;
+
+//TO DO::
+//[ ] Implement the DB_URL to switch automatically between localhost and Heroku depending on production/development
+//[ ] Implement a way to catcht the accountOwner's ID
+
+const OwnerFamily: React.FC = () => {
+  const [familyMember, setFamilyMember] = useState<{id: number, account_id: number, first_name: string, last_name: string}[]>([],);
+  useEffect(() => {
+    const accountId = {
+      params: {
+        account_id: obtainedId,
+      },
+    };
+    axios
+      .get(`${DB_URL}/account/${accountId.params.account_id}/family`, accountId)
+      .then((res) => {
+        if (res.data.length > familyMember.length) {
+          let lastIndex = familyMember.length;
+          setFamilyMember(prevFamily => [...prevFamily, res.data[lastIndex]]);
+        }
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  }, [familyMember]);
+
   return (
     <div className="OwnerRegist">
       <h1>taberu</h1>
@@ -17,7 +46,13 @@ function OwnerFamily() {
       </main>
       <section>
         <h2>Family's Name</h2>
-        <p>Hasegawa Ayumi</p>
+        {familyMember.map(family => {
+        return (
+          <div key={family.id}>
+            <p>{family.last_name} {family.first_name}</p>
+          </div>
+        );
+      })}
       </section>
 
     </div>
