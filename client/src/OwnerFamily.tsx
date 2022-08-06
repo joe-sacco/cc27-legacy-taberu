@@ -3,11 +3,8 @@ import axios from "axios";
 import './App.css';
 import { useForm } from "react-hook-form";
 
-// const DB_URL = "https://taberu-server.herokuapp.com" ? "http://localhost:8080";
 const DB_URL = process.env.ENVIRONMENT ? "https://taberu-server.herokuapp.com" : "http://localhost:8080";
 
-// console.log("🔴🔴🔴🔴🔴", process.env.ENVIRONMENT)
-// Hardcoded ownerAccount ID
 const obtainedId = 2;
 
 interface addFamily {
@@ -16,7 +13,7 @@ interface addFamily {
 }
 
 //TO DO::
-//[ ] Implement the DB_URL to switch automatically between localhost and Heroku depending on production/development
+//[✅] Implement the DB_URL to switch automatically between localhost and Heroku depending on production/development
 //[ ] Implement a way to catcht the accountOwner's ID
 //[✅] Implement add family function
 //[ ] Make the page show newly added family automatically
@@ -62,7 +59,6 @@ const OwnerFamily: React.FC = () => {
   const onSubmit = (data: any) => {
     newFamilyInfo.first_name = data.firstname;
     newFamilyInfo.last_name = data.lastname;
-    console.log("🔴🔴🔴🔴🔴", familyMember)
     setNewFamily(newFamilyInfo)
   };
   useEffect(() => {
