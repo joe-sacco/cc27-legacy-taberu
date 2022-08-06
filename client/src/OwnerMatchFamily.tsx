@@ -17,8 +17,13 @@ function OwnerMatchFamily() {
     },
   });
   const onSubmit = (data: any) => {
-    console.log(data);
-    return data;
+    // For our pincode check we need pincode AND id
+    // Here we somehow need to get hold of id we got logging in and add it to this object
+    //    that we will be sending to server
+    data.id = 6;
+    data.pincode = Number(data.pincode);
+    // console.log(data);
+    // return data;
   };
 
   return (
