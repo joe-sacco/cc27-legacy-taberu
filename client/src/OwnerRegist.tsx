@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 interface test {
-  lastname: string;
+  last_name: string;
   firstname: string;
   email: string;
   password: string;
@@ -20,14 +21,13 @@ interface test {
 // });
 
 function OwnerRegist() {
-  
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<test>({
     defaultValues: {
-      lastname: "",
+      last_name: "",
       firstname: "",
       email: "",
       password: "",
@@ -35,8 +35,23 @@ function OwnerRegist() {
     },
   });
   const onSubmit = (data: any) => {
-    console.log(data);
-    return data;
+    // console.log("👏👏👏👏👏👏");
+    // console.log(data);
+    // return data;
+    const DB_URL = "http://localhost:8080";
+    // const newAccountInfo = {
+    //   first_name: "",
+    //   last_name: "",
+    //   email: "",
+    //   password: "",
+    //   pincode: "",
+    //   image: null,
+    // };
+    const newAccountInfo = data;
+
+    axios.post(`${DB_URL}/account`, newAccountInfo).then((res) => {
+      console.log(res);
+    });
   };
 
   return (
@@ -49,7 +64,7 @@ function OwnerRegist() {
           <input
             type="text"
             id="lastname"
-            {...register("lastname", { required: "this is required" })}
+            {...register("last_name", { required: "this is required" })}
           />
           <label htmlFor="firstname">First Name *</label>
           <input
