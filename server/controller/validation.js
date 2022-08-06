@@ -5,8 +5,8 @@ module.exports = {
       accountInfo.hasOwnProperty("last_name") &&
       accountInfo.hasOwnProperty("email") &&
       accountInfo.hasOwnProperty("password") &&
-      accountInfo.hasOwnProperty("pincode") &&
-      accountInfo.hasOwnProperty("image")
+      accountInfo.hasOwnProperty("pincode")
+      // accountInfo.hasOwnProperty("image")
     ) {
       return true;
     } else {

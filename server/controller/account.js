@@ -4,6 +4,10 @@ const validator = require("./validation");
 module.exports = {
   async createAccount(req, res) {
     const accountInfo = await req.body;
+    accountInfo.pincode = Number(accountInfo.pincode);
+
+    console.log("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥");
+    console.log(accountInfo);
 
     if (validator.validateNewAccount(accountInfo)) {
       await accountModel.createAccount(accountInfo);
