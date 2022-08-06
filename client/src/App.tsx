@@ -52,14 +52,14 @@ function App() {
               </>
             }
           />
-          <Route
+          <Route 
             path="/OwnerRecipe"
             element={
-              <>
-                <Header />
-                <OwnerRecipe />
-              </>
-            }
+            <>
+            <Header />
+            <OwnerRecipe />
+            </>
+          } 
           />
           <Route path="/ChildMain" element={<ChildMain />} />
           <Route path="/ChildDone" element={<ChildDone />} />
