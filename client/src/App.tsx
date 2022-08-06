@@ -10,6 +10,7 @@ import OwnerLogin from "./OwnerLogin";
 import OwnerLoginMain from "./OwnerLoginMain";
 import OwnerPost from "./OwnerPost";
 import OwnerFamily from "./OwnerFamily";
+import OwnerRecipe from "./OwnerRecipe";
 import Header from "./components/Header";
 import "./components/Reset.css";
 import "./App.css";
@@ -50,6 +51,15 @@ function App() {
                 <OwnerFamily />
               </>
             }
+          />
+          <Route 
+            path="/OwnerRecipe"
+            element={
+            <>
+            <Header />
+            <OwnerRecipe />
+            </>
+          } 
           />
           <Route path="/ChildMain" element={<ChildMain />} />
           <Route path="/ChildDone" element={<ChildDone />} />
