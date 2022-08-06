@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import dummy from "./images/dummy.png";
 
-const DB_URL = "http://localhost:8080";
+const DB_URL = process.env.ENVIRONMENT ? "https://taberu-server.herokuapp.com" : "http://localhost:8080";
 
 const OwnerRecipe: React.FC = () => {
   const [allRecipes, setAllRecipes] = useState<{id: number, name: string}[]>([],);

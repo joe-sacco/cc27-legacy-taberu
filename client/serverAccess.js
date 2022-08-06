@@ -1,5 +1,5 @@
 /*!!!Please copy this DB_URL when you use the server access methods!!!*/
-const DB_URL = "http://localhost:8080"
+const DB_URL = process.env.ENVIRONMENT ? "https://taberu-server.herokuapp.com" : "http://localhost:8080";
 
 //-----------------FOR LOGIN-----------------
 useEffect(() => {

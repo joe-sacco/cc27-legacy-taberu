@@ -22,7 +22,8 @@ function OwnerLogin() {
   const onSubmit = (data: any) => {
     // console.log(data);
     // return data;
-    const DB_URL = "http://localhost:8080";
+    const DB_URL = process.env.ENVIRONMENT ? "https://taberu-server.herokuapp.com" : "http://localhost:8080";
+
     const accountInfo = {
       params: data,
     };
