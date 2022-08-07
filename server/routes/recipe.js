@@ -4,6 +4,6 @@ const recipeController = require("../controller/recipe");
 
 router.post("/", recipeController.createRecipe);
 router.get("/", recipeController.getRecipe);
-router.post("/requestReview", recipeController.requestReview);
+router.post("/requestReview", recipeController.createPlanMenu);
 
 module.exports = router;
