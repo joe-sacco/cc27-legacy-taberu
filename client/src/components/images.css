@@ -13,3 +13,17 @@
   width: 360px;
   text-align: center;
 }
+
+.image_top{
+  width: 460px;
+  height: 460px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  border-radius: 50% 50%;
+}
+
+.image_top img{
+  width: 389px;
+  padding: 5% 0;
+}
