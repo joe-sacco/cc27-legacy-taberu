@@ -64,8 +64,6 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 There are many great cooking apps, but this one is the one you need.
 
 Here's why:
