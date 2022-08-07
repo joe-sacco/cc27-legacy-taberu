@@ -47,6 +47,18 @@ module.exports = {
     }
   },
 
+  async updatePlanMenu(req, res) {
+    const recipeReviewToUpdate = await req.body;
+
+    if (validator.validateRecipePlanToUpdate(recipeReviewToUpdate)) {
+      console.log(recipeReviewToUpdate);
+      await recipeModel.updatePlanMenu(recipeReviewToUpdate);
+      res.status(200).send("UPDATED");
+    } else {
+      res.status(406).send("BAD DATA. TRY AGAIN");
+    }
+  },
+
   async createRecipeReview(req, res) {
     const recipeReviewObject = await req.body;
 
