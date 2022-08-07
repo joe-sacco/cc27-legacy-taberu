@@ -142,6 +142,15 @@
 }
 
 /* ChildeMenu */
+.reviewAreaIn_chMain label img {
+  margin: 0;
+}
+
+.reviewAreaIn_chMain label:first-of-type img{
+  margin: 0 15px 0 0;
+}
+
+/* ChildeMenu */
 .button_chMenu {
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(42, 176, 211);
@@ -163,7 +172,6 @@
 .gobackBtn_chMenu {
   background-color: rgb(229, 103, 29);
   font-family: 'Montserrat', sans-serif;
-
   width: 250px;
   height: 50px;
   font-weight: bold;

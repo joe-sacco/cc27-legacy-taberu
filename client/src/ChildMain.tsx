@@ -78,44 +78,52 @@ const ChildMain: React.FC = () => {
           <img src={dummy} alt="taberu" />
         </div>
         <p className="text_chMain">Please Review Below Recipe</p>
-        {recipeToReview.map((recipe, i) => {
-          return (
-            <div className="reviewArea_chMain" key={recipe.recipe_id + "_" + i}>
-              <p>{recipe.name}</p>
-              <form>
-                <label>
-                  <img src={like} alt="like" height={100} />
-                  <button
-                    type="submit"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setReview({
-                        recipe_id: recipe.recipe_id,
-                        review: 1,
-                      });
-                      recipeToReview.splice(i, 1);
-                    }}
-                  />
-                </label>
-                <label>
-                  <img src={dislike} alt="dislike" height={100} />
-                  <button
-                    type="submit"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setReview({
-                        recipe_id: recipe.recipe_id,
-                        review: -1,
-                      });
-                      recipeToReview.splice(i, 1);
-                    }}
-                  />
-                </label>
-              </form>
-            </div>
-          );
-        })}
+        <div className="reviewArea_chMain">
+          {recipeToReview.map((recipe, i) => {
+            return (
+              <div
+                className="reviewAreaIn_chMain"
+                key={recipe.recipe_id + "_" + i}
+              >
+                <p>{recipe.name}</p>
+                <form>
+                  <label>
+                    <img src={like} alt="like" height={100} />
+                    <button
+                      type="submit"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setReview({
+                          recipe_id: recipe.recipe_id,
+                          review: 1,
+                        });
+                        recipeToReview.splice(i, 1);
+                      }}
+                    />
+                  </label>
+                  <label>
+                    <img src={dislike} alt="dislike" height={100} />
+                    <button
+                      type="submit"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setReview({
+                          recipe_id: recipe.recipe_id,
+                          review: -1,
+                        });
+                        recipeToReview.splice(i, 1);
+                      }}
+                    />
+                  </label>
+                </form>
+              </div>
+            );
+          })}
+        </div>
       </main>
+      <p className="gobackBtn_chMenu">
+        <a href="./OwnerMatchFamily">Go back to Owner page</a>
+      </p>
     </div>
   );
 };

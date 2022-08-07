@@ -45,6 +45,14 @@ h1.logo img {
   width: 100%;
 }
 
+/* ChildeMain */
+.reviewArea_chMain {
+  display: flex;
+  flex-wrap: wrap;
+  width: 505px;
+  margin: 0 auto;
+}
+
 /* ChildeMenu */
 .nameArea_chMenu {
   display: flex;
