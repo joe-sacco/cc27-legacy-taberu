@@ -56,6 +56,7 @@
 
 .text_chMain {
   text-align: center;
+  font-size: 1.8rem;
   margin: 0 0 10px 0;
 }
 
@@ -63,4 +64,10 @@
   font-family: 'Poppins', sans-serif;
   font-size: 2.4rem;
   margin: 0 0 20px 0;
+}
+
+/* ChildeMenu */
+.text_chMenu {
+  text-align: center;
+  font-size: 1.8rem;
 }
