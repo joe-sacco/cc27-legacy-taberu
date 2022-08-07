@@ -21,7 +21,7 @@ const OwnerLogin:React.FC<Props> = ({setAccountId}) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<test>({
     defaultValues: {
       email: "",
@@ -57,7 +57,7 @@ const OwnerLogin:React.FC<Props> = ({setAccountId}) => {
       <h1>taberu</h1>
       <main>
         <h1 className="logo">Login</h1>
-        <form action="OwnerLoginMain" onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="email">E-mail *</label>
           <input
             type="email"

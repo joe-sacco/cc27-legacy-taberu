@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -20,7 +20,7 @@ const OwnerRegist: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<test>({
     defaultValues: {
       last_name: "",

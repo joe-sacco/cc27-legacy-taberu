@@ -20,7 +20,7 @@ const OwnerMatchFamily: React.FC<Props> = ({accountId}) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<test>({
     defaultValues: {
       pincode: undefined,
@@ -70,10 +70,10 @@ const OwnerMatchFamily: React.FC<Props> = ({accountId}) => {
         </form>
         <ul>
           <li>
-            <a href="#">Mizuki</a>
+            {/* <a href="#">Mizuki</a> */}
           </li>
           <li>
-            <a href="#">Makoto</a>
+            {/* <a href="#">Makoto</a> */}
           </li>
         </ul>
       </main>
