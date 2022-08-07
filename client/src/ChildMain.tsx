@@ -54,7 +54,7 @@ const ChildMain: React.FC = () => {
     if (review) axios
     .post(`${DB_URL}/recipe/recipeReview`, reviewObj)
     // (2) need to navigate to ChildDone page
-    axios.patch(`${DB_URL}/recipe/requestReview`, requestReview)
+    axios.put(`${DB_URL}/recipe/requestReview`, requestReview)
     
     if (review) navigate("/ChildDone", {state:{review}});
     console.log("🟡🟡🟡🟡", recipeToReview)

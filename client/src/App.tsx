@@ -75,7 +75,12 @@ function App() {
               </>
             }
           />
-          <Route path="/ChildMenu" element={<ChildMenu />} />
+          <Route path="/ChildMenu" 
+          element={
+            <>
+            <ChildMenu account_id={accountId} />
+            </>
+            } />
           <Route path="/ChildMain" element={<ChildMain />} />
           <Route path="/ChildDone" element={<ChildDone />} />
         </Routes>
