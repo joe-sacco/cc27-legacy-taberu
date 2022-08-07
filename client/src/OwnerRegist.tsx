@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
-const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+const DB_URL = "http://localhost:8080";
 
 interface test {
   last_name: string;
@@ -47,6 +48,10 @@ const OwnerRegist: React.FC = () => {
       console.log(res);
       const responseCode = res.status;
       // So here we can redirect to LOGIN PAGE if response code is 201;
+      if (responseCode === 201) {
+        alert("Account created. Welcome to taberu!")
+        navigate("/OwnerLogin");
+      }
     });
   };
 

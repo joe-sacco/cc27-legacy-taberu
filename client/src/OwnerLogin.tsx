@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
-const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+const DB_URL = "http://localhost:8080";
 
 interface test {
   email: string;

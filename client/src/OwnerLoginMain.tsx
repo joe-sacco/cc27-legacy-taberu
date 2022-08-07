@@ -11,7 +11,7 @@ function OwnerLoginMain() {
           <h1>Curry!!!</h1>
         </div>
       <ButtonChild link={'/OwnerFamily'} text={'> Family'} />
-       <ButtonChild link={'/OwnerPost'} text={'> Recipes'} />
+       <ButtonChild link={'/OwnerRecipe'} text={'> Recipes'} />
       </main>
 
     </div>
