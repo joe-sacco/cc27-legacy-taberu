@@ -21,7 +21,8 @@ body {
   background: rgb(252, 239, 226);
 }
 
-.OwnerLogin { 
+.OwnerLogin,
+.OwnerRecipe { 
   padding: 60px 0;
   background:rgb(250, 247, 247);
 }

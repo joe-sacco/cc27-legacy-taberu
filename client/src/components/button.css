@@ -14,6 +14,7 @@
   padding: 24% 0;
 }
 
+/* OwnerTop */
 .btuArea_top {
   display: flex;
   justify-content: space-between;
@@ -39,5 +40,5 @@
 
 .btuArea_top .button a{
   display: block;
-    padding: 5% 0;
+  padding: 5% 0;
 }
