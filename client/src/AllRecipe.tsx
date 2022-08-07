@@ -83,7 +83,7 @@ const OwnerRecipe: React.FC = () => {
           </form>
         </div>
         <div className="textArea_owRecipe">
-          <p>All Recipes Out There</p>
+          <h2>All Recipes</h2>
         </div>
 
         <div className="reviewArea_owRecipe">

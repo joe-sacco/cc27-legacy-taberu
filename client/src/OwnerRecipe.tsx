@@ -44,7 +44,7 @@ const OwnerRecipe: React.FC = () => {
         <img src={dummy} alt="" />
         <div className="formArea_owRecipe"></div>
         <div className="textArea_owRecipe">
-          <p>All Recipes Out There</p>
+          <h2>My Recipes</h2>
         </div>
         <div className="reviewArea_owRecipe">
           {allRecipes.reverse().map((recipe) => {
