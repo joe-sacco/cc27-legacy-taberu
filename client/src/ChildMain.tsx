@@ -1,28 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './components/images.css';
 import dummy from './images/dummy.png';
 import like from './images/like.png';
 import dislike from './images/dislike.png';
-
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 // GET recipe_review (all the review requested recipe to display on childMain page)
 // after child review "like"/"dislike" => PATCH review_recipe for review
 
-function ChildMain() {
+const ChildMain: React.FC = () => {
+  const navigate = useNavigate();
+  const [review, setReview] = useState<number>();
+  // review: 0 = dislike, 1 = like
+
+  useEffect(() => {
+    // (1) if review is received, then need to PATCH to server to add review to recipe
+
+    // (2) need to navigate to ChildDone page
+    navigate("/ChildDone", {state:{review}});
+    console.log("🟡🟡🟡🟡", review)
+  },[review])
+
   return (
     <div className="TopChild">
       <main>
-        <p>Did you enjoy the meal?</p>
+        <h1>Did you enjoy the meal?</h1>
         <div className='mainVisual'>
           <img src= { dummy } alt="taberu" />
         </div>
-        <form method="POST" action="./ChildDone.tsx">
+        <form>
           <ul>
-            <li><a href="/ChildDone"><img src={ like } alt="like" /></a></li>
-            <li><a href="/ChildDone"><img src={ dislike } alt="dislike" /></a></li>
+            <li>
+              <label> 
+                <img src={ like } alt="like" />
+                <button type="submit" onClick={(e) => {
+                  e.preventDefault();
+                  setReview(1);
+                  }} />
+              </label>
+            </li>
+            <li>
+              <label> 
+                <img src={ dislike } alt="dislike" />
+                <button type="submit" onClick={(e) => {
+                  e.preventDefault();
+                  setReview(0);
+                  }}  />
+              </label>
+            </li>
           </ul>
-      </form>
-
+        </form>
       </main>
     </div>
   );
