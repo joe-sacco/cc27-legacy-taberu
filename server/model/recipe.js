@@ -41,8 +41,9 @@ module.exports = {
   getRecipeReview(receivedId) {
     // send back recipe_id and review
     return knex
-      .select("*")
+      .select("account_id", "family_id", "recipe_id", "name", "date", "review")
       .from(RECIPE_REVIEW_TABLE)
-      .where({ account_id: receivedId });
+      .where({ account_id: receivedId })
+      .join("recipe", "recipe_review.recipe_id", "=", "recipe.id");
   },
 };
