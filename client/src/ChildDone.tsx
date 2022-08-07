@@ -2,8 +2,11 @@ import React from 'react';
 import  ButtonChild from './components/Button';
 import './components/images.css';
 
+// type Props = {
+//   review: number | undefined;
+// }
 
-function ChildDone() {
+const ChildDone: React.FC = () => {
   return (
     <div className="TopChild">
       <main>
