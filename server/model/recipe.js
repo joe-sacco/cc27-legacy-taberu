@@ -34,8 +34,37 @@ module.exports = {
       .join("recipe", "daily_menu.recipe_id", "=", "recipe.id");
   },
 
-  createRecipeReview(data) {
-    return knex.insert(data).into(RECIPE_REVIEW_TABLE);
+  async createRecipeReview(data) {
+    const foundReview = await knex
+      .select("review")
+      .from(RECIPE_REVIEW_TABLE)
+      .where({
+        account_id: data.account_id,
+        family_id: data.family_id,
+        recipe_id: data.recipe_id,
+      });
+
+    if (foundReview.length >= 1) {
+      if (data.review === 1) {
+        return knex(RECIPE_REVIEW_TABLE)
+          .where({
+            account_id: data.account_id,
+            family_id: data.family_id,
+            recipe_id: data.recipe_id,
+          })
+          .update({ review: foundReview[0].review + 1 });
+      } else {
+        return knex(RECIPE_REVIEW_TABLE)
+          .where({
+            account_id: data.account_id,
+            family_id: data.family_id,
+            recipe_id: data.recipe_id,
+          })
+          .update({ review: foundReview[0].review - 1 });
+      }
+    } else {
+      return knex.insert(data).into(RECIPE_REVIEW_TABLE);
+    }
   },
 
   getRecipeReview(receivedId) {
