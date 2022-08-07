@@ -25,7 +25,7 @@ exports.up = function (knex) {
     table.date("date").notNullable();
     table.integer("review");
 
-    table.primary(["account_id", "family_id", "recipe_id"]);
+    // table.primary(["account_id", "family_id", "recipe_id"]);
   });
 };
 
