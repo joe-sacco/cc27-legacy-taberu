@@ -54,10 +54,7 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
       });
   });
 
-  const {
-    register,
-    handleSubmit,
-  } = useForm<addFamily>({
+  const { register, handleSubmit } = useForm<addFamily>({
     defaultValues: {
       last_name: "",
       first_name: "",
@@ -115,15 +112,18 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
       </main>
       <section>
         <h2>Family's Name</h2>
-        {familyMember.map((family) => {
-          return (
-            <div key={family.id}>
-              <p>
-                {family.last_name} {family.first_name}
-              </p>
-            </div>
-          );
-        })}
+        <div className="nameArea_owFamily">
+          {familyMember.map((family) => {
+            return (
+              <div className="nameAreaIn_owFamily" key={family.id}>
+                <p>
+                  {family.last_name}
+                  {family.first_name}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </section>
     </div>
   );

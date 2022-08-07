@@ -59,6 +59,18 @@
   text-align: center;
 }
 
+.nameArea_owFamily {
+  width: 61%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.nameAreaIn_owFamily p{
+  display: block;
+  font-size: 1.8rem;
+  margin: 0 10px 20px 0;
+}
 /* ChildMain */
 .TopChild h2 {
   font-family: 'Poppins', sans-serif;
