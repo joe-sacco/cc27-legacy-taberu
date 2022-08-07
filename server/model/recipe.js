@@ -19,11 +19,18 @@ module.exports = {
     return knex.insert(data).into(DAILY_MENU_TABLE);
   },
 
+  updatePlanMenu(data) {
+    // WORK HERE!
+    return knex(DAILY_MENU_TABLE)
+      .where({ account_id: data.account_id, recipe_id: data.recipe_id })
+      .update({ review_request: data.request_review });
+  },
+
   getPlanMenu(receivedId) {
     return knex
       .select("recipe_id", "name", "date")
       .from(DAILY_MENU_TABLE)
-      .where({ account_id: receivedId })
+      .where({ account_id: receivedId, review_request: true })
       .join("recipe", "daily_menu.recipe_id", "=", "recipe.id");
   },
 
