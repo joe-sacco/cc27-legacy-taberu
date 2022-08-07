@@ -11,8 +11,8 @@ function OwnerLoginMain() {
         </div>
         <nav className="navi_owLoginMain">
           <ButtonChild link={"/OwnerFamily"} text={"Family"} />
-          <ButtonChild link={"/OwnerRecipe"} text={"Recipes"} />
-          <ButtonChild link={"/ChildMain"} text={"Menu To Review"} />
+          <ButtonChild link={"/AllRecipe"} text={"All Recipes"} />
+          <ButtonChild link={"/OwnerRecipe"} text={"My Recipe Reviews"} />
         </nav>
       </main>
     </div>
