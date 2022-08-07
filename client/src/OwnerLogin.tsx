@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 // const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
 const DB_URL = "http://localhost:8080";
@@ -13,10 +13,10 @@ interface test {
 }
 
 type Props = {
-  setAccountId:(id: number | undefined) => void;
-}
+  setAccountId: (id: number | undefined) => void;
+};
 
-const OwnerLogin:React.FC<Props> = ({setAccountId}) => {
+const OwnerLogin: React.FC<Props> = ({ setAccountId }) => {
   const navigate = useNavigate();
   const {
     register,
@@ -29,7 +29,6 @@ const OwnerLogin:React.FC<Props> = ({setAccountId}) => {
     },
   });
   const onSubmit = (data: any) => {
-
     const accountInfo = {
       params: data,
     };
@@ -41,8 +40,11 @@ const OwnerLogin:React.FC<Props> = ({setAccountId}) => {
         // So the response we're getting has user's id in it
         // And this is how we access it
         const id = res.data.id;
+
+        localStorage.setItem("account_id", id);
+
         setAccountId(id);
-        alert("You are successfully logged in!")
+        alert("You are successfully logged in!");
         navigate("/OwnerMatchFamily");
       })
       .catch((error) => {
@@ -75,6 +77,6 @@ const OwnerLogin:React.FC<Props> = ({setAccountId}) => {
       </main>
     </div>
   );
-}
+};
 
 export default OwnerLogin;
