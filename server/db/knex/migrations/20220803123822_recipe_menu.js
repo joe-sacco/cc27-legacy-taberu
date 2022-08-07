@@ -19,7 +19,7 @@ exports.up = function (knex) {
     table.boolean("review_request").notNullable();
     table.date("date").notNullable();
 
-    table.primary(["account_id", "recipe_id"]);
+    // table.primary(["account_id", "recipe_id"]);
   });
 };
 
