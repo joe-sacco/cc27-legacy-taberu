@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useForm } from "react-hook-form";
 import "./App.css";
 import "./components/form.css";
 import dummy from "./images/dummy.png";
@@ -8,9 +7,9 @@ import dummy from "./images/dummy.png";
 // const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
 const DB_URL = "http://localhost:8080";
 
-interface addRecipe {
-  name: string;
-}
+// interface addRecipe {
+//   name: string;
+// }
 
 const OwnerRecipe: React.FC = () => {
   const [allRecipes, setAllRecipes] = useState<{ account_id: number; family_id: number; recipe_id: number; name: string; date: Date; review: number }[]>(
@@ -82,11 +81,6 @@ const OwnerRecipe: React.FC = () => {
       if (res.data.length > allRecipes.length) {
         let lastIndex = allRecipes.length;
         setAllRecipes((prevRecipe) => [...prevRecipe, res.data[lastIndex]]);
-        // for (let i = 0; i < allRecipes.length; i++) {
-        //   if (allRecipes[i].id == allRecipes[lastIndex].recipe_id) {
-        //     allRecipes[i].review = allRecipes[lastIndex].review;
-        //   }
-        // }
       }
       console.log("🔥🔥🔥🔥🔥🔥", allRecipes);
       // console.log("🥣🥣🥣🥣🥣🥣", recipeWithReview);
@@ -97,108 +91,37 @@ const OwnerRecipe: React.FC = () => {
       });
   }, [allRecipes]);
 
-
-//   const test = [
-//     {
-//     id: 3,
-//     name: "Pasta",
-//     review: 1
-//     },
-//     {
-//       id: 3,
-//       name: "Pasta",
-//       review: undefined
-//       },
-//       {
-//         id: 3,
-//         name: "Pasta",
-//         review: 1
-//         },
-// ]
   return (
     <div className="OwnerRecipe">
       <main>
         <img src={dummy} alt="" />
         <div className="formArea_owRecipe">
-          {/* <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="recipename">
-              Recipe Name <span>*</span>
-            </label>
-            <input
-              type="text"
-              id="recipename"
-              placeholder="Please put the recipe name"
-              {...register("name", { required: "this is required" })}
-            />
-            <button>Add</button>
-          </form> */}
         </div>
         <div className="textArea_owRecipe">
           <p>All Recipes Out There</p>
         </div>
 
         {allRecipes.reverse().map((recipe) => {
-        {/* {test.reverse().map((recipe) => { */}
           if (recipe.review > 0) {
             return (
               <div key={recipe.recipe_id + "_" + recipe.name} className="reviewArea_owRecipe">
                 <p>{recipe.name}</p>
-                {/* <label> */}
                   <p>{"⭐️".repeat(recipe.review)}</p>
                   {" "}
-                  {/* 🍴 Review Request
-                  <button
-                    type="submit"
-                    value={recipe.id}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setReviewRecipeId(recipe.id);
-                    }}
-                  >
-                    submit
-                  </button> */}
-                {/* </label> */}
               </div>
             );
           } else if (recipe.review < 0){
             return (
               <div key={recipe.recipe_id + "_" + recipe.name} className="reviewArea_owRecipe">
                 <p>{recipe.name}</p>
-                {/* <label> */}
+
                   <p>{"👎🏼".repeat(recipe.review * -1)}</p>
-                  {" "}
-                  {/* 🍴 Review Request
-                  <button
-                    type="submit"
-                    value={recipe.id}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setReviewRecipeId(recipe.id);
-                    }}
-                  >
-                    submit
-                  </button> */}
-                {/* </label> */}
               </div>
             );
           } else {
             return (
               <div key={recipe.recipe_id + "_" + recipe.name} className="reviewArea_owRecipe">
                 <p>{recipe.name}</p>
-                {/* <label> */}
-                  {" "}
-                  {/* 🍴 Review Request
-                  <button
-                    type="submit"
-                    value={recipe.id}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setReviewRecipeId(recipe.id);
-                    }}
-                  >
-                    submit
-                  </button> */}
-                {/* </label> */}
               </div>
             );
           }
