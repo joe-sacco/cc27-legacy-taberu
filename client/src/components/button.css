@@ -42,3 +42,71 @@
   display: block;
   padding: 5% 0;
 }
+
+/* OwnerLoginMain */
+.navi_owLoginMain {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.navi_owLoginMain p{
+  margin: 0 0 30px 0;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(42, 176, 211);
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 6px rgb(0, 0, 0, 0.16);
+}
+
+.navi_owLoginMain p a{
+  color: #fff;
+  display: block;
+ }
+
+.navi_owLoginMain p::before {
+  margin: 0 10px 0 0;
+}
+
+ .navi_owLoginMain p:first-of-type::before {
+    content: '';
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-image: url(../images/icon1_owLoginMain.png);
+    background-size: contain;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border-radius: 50% 50%;
+    background-position: center center;
+ }
+
+.navi_owLoginMain p:nth-of-type(2)::before {
+      content: '';
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      background-image: url(../images/icon2_owLoginMain.png);
+      background-size: contain;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      background-color: #fff;
+      border-radius: 50% 50%;
+      background-position: center center;
+    }
+
+.navi_owLoginMain p:last-of-type::before {
+  content: '';
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  background-image: url(../images/icon3_owLoginMain.png);
+  background-size: contain;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border-radius: 50% 50%;
+  background-position: center center;
+}

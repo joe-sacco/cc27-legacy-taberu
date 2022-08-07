@@ -1,19 +1,20 @@
-import React from 'react';
-import  ButtonChild from './components/Button';
-import './App.css';
+import React from "react";
+import ButtonChild from "./components/Button";
+import "./App.css";
 
 function OwnerLoginMain() {
   return (
     <div className="OwnerLoginMain">
       <main>
-        <div>
-          <p>Today’s recipe is</p>
-          <h1>Curry!!!</h1>
+        <div className="text_owLoginMain">
+          <h2>Welcome to Taberu!!</h2>
         </div>
-      <ButtonChild link={'/OwnerFamily'} text={'> Family'} />
-       <ButtonChild link={'/OwnerRecipe'} text={'> Recipes'} />
+        <nav className="navi_owLoginMain">
+          <ButtonChild link={"/OwnerFamily"} text={"Family"} />
+          <ButtonChild link={"/OwnerRecipe"} text={"Recipes"} />
+          <ButtonChild link={"/ChildMain"} text={"Menu To Review"} />
+        </nav>
       </main>
-
     </div>
   );
 }
