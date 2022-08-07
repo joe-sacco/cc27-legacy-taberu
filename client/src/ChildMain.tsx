@@ -64,7 +64,6 @@ const ChildMain: React.FC = () => {
 
     if (review) {
       navigate("/ChildDone", { state: { review } });
-      console.log("🟡🟡🟡🟡", reviewObj);
     }
   }, [review]);
 
