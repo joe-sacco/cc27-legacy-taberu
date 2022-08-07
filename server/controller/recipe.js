@@ -33,4 +33,19 @@ module.exports = {
       res.status(406).send("BAD DATA. TRY AGAIN");
     }
   },
+
+  async getPlanMenu(req, res) {
+    const account_id = (await req.query.account_id)
+      ? Number(req.query.account_id)
+      : undefined;
+
+    if (account_id && validator.validateFamilyAccountId(account_id)) {
+      const planMenu = await recipeModel.getPlanMenu(account_id);
+      console.log(planMenu);
+      // res.status(200).json(planMenu);
+      res.status(200).send("Got you!");
+    } else {
+      res.status(406).send("BAD DATA. TRY AGAIN");
+    }
+  },
 };
