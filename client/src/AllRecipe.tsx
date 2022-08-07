@@ -13,9 +13,9 @@ interface addRecipe {
 }
 
 const OwnerRecipe: React.FC = () => {
-  const [allRecipes, setAllRecipes] = useState<{ id: number; name: string; review: number | undefined }[]>(
-    []
-  );
+  const [allRecipes, setAllRecipes] = useState<
+    { id: number; name: string; review: number | undefined }[]
+  >([]);
   const [newRecipe, setNewRecipe] = useState<{ name: string }>();
   const [reviewRecipeId, setReviewRecipeId] = useState<number | undefined>();
 
@@ -90,27 +90,29 @@ const OwnerRecipe: React.FC = () => {
           <p>All Recipes Out There</p>
         </div>
 
-        {allRecipes.reverse().map((recipe) => {
-        return (
-          <div key={recipe.id} className="reviewArea_owRecipe">
-            <p>{recipe.name}</p>
-            <label>
-              {" "}
-              {/* 🍴 Review Request */}
-              <button
-                type="submit"
-                value={recipe.id}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setReviewRecipeId(recipe.id);
-                }}
-              >
-                Request Review
-              </button>
-            </label>
-          </div>
-        );
-        })}
+        <div className="reviewArea_owRecipe">
+          {allRecipes.reverse().map((recipe) => {
+            return (
+              <div key={recipe.id} className="reviewAreaIn_owRecipe">
+                <p>{recipe.name}</p>
+                <label>
+                  {" "}
+                  {/* 🍴 Review Request */}
+                  <button
+                    type="submit"
+                    value={recipe.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setReviewRecipeId(recipe.id);
+                    }}
+                  >
+                    Request Review
+                  </button>
+                </label>
+              </div>
+            );
+          })}
+        </div>
       </main>
     </div>
   );
