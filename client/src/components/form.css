@@ -4,28 +4,38 @@
   margin: 0 auto;
 }
 
-.formArea_owRecipe label {
+.formArea_owRegist {
+    width: 500px;
+    margin: 0 auto 30px;
+}
+
+.formArea_owRecipe label,
+.inputArea_owRegist label {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 2.4rem;
   padding: 0 20px 0 0;
 }
-.formArea_owRecipe label span{
+.formArea_owRecipe label span,
+.inputArea_owRegist label span{
   font-size: 1.6rem;
   color: #ff0000;
 }
 
-.formArea_owRecipe input[type=text] {
+.formArea_owRecipe input[type=text],
+.inputArea_owRegist input[type=text] {
   width: 100%;
   margin: 10px 0;
   padding: 10px;
   height: 40px;
   border-radius: 8px;
+  background: #fff;
   box-shadow: 2px 4px 6px rgb(0, 0, 0, 0.16);
   display: block;
 }
 
-.formArea_owRecipe button {
+.formArea_owRecipe button,
+.formArea_owRegist button {
   background: rgb(229, 103, 29);
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -37,4 +47,9 @@
   padding: 15px;
   display: block;
   margin: 30px auto 0;
+}
+
+.inputArea_owRegist:first-of-type {
+  margin: 0 0 20px 0;
+
 }
