@@ -5,7 +5,7 @@ import "./App.css";
 import "./components/form.css";
 import dummy from "./images/dummy.png";
 
-// const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com";
 const DB_URL = "http://localhost:8080";
 
 interface addRecipe {
@@ -19,7 +19,6 @@ const OwnerRecipe: React.FC = () => {
   const [newRecipe, setNewRecipe] = useState<{ name: string }>();
   const [reviewRecipeId, setReviewRecipeId] = useState<number | undefined>();
 
-  // This is to render all recipes on the page
   useEffect(() => {
     axios
       .get(`${DB_URL}/recipe`)
@@ -34,7 +33,6 @@ const OwnerRecipe: React.FC = () => {
       });
   }, [allRecipes]);
 
-  // This is to add recipe to the database
   const {
     register,
     handleSubmit,
@@ -55,7 +53,6 @@ const OwnerRecipe: React.FC = () => {
     if (newRecipe) axios.post(`${DB_URL}/recipe`, newRecipe);
   }, [newRecipe]);
 
-  // This is to add recipe to plan_menu (review request)
   const recipeRequestReview = {
     account_id: Number(localStorage.getItem("account_id")),
     recipe_id: reviewRecipeId,
@@ -64,7 +61,6 @@ const OwnerRecipe: React.FC = () => {
   useEffect(() => {
     if (reviewRecipeId) {
       axios.post(`${DB_URL}/recipe/requestReview`, recipeRequestReview);
-      console.log("🥣🥣🥣🥣🥣", recipeRequestReview);
     }
   }, [reviewRecipeId]);
 
