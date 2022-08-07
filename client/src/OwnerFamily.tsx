@@ -116,10 +116,7 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
           {familyMember.map((family) => {
             return (
               <div className="nameAreaIn_owFamily" key={family.id}>
-                <p>
-                  {family.last_name}
-                  {family.first_name}
-                </p>
+                <p>{family.first_name + " " + family.last_name}</p>
               </div>
             );
           })}

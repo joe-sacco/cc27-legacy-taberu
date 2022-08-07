@@ -66,12 +66,22 @@
   margin: 0 auto;
 }
 
+.nameAreaIn_owFamily {
+  width: 210px;
+}
+
+.nameAreaIn_owFamily:nth-child(2n) {
+  margin-left: 10px;
+}
+
 .nameAreaIn_owFamily p{
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.4rem;
-  margin: 0 10px 20px 0;
+  margin: 0 0 20px 0;
 }
+
+
 /* ChildMain */
 .TopChild h2 {
   font-family: 'Poppins', sans-serif;
