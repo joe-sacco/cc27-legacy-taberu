@@ -61,7 +61,7 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
       .catch((error) => {
         console.log(error.response.data);
       });
-  }, [familyMember]);
+  });
 
   const {
     register,

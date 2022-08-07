@@ -96,7 +96,7 @@ const OwnerRecipe: React.FC = () => {
             <p>{recipe.name}</p>
             <label>
               {" "}
-              🍴 Review Request
+              {/* 🍴 Review Request */}
               <button
                 type="submit"
                 value={recipe.id}
@@ -105,7 +105,7 @@ const OwnerRecipe: React.FC = () => {
                   setReviewRecipeId(recipe.id);
                 }}
               >
-                submit
+                Request Review
               </button>
             </label>
           </div>
