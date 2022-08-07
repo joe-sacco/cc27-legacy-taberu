@@ -87,18 +87,22 @@
 }
 
 /* ChildMain */
-.reviewArea_chMain {
+.reviewAreaIn_chMain {
   text-align: center;
+  background-color: #fff;
+  border-radius:8px;
+  padding: 10px;
+  margin: 0 auto 20px auto;
 }
 
-/* .reviewArea_chMain form {
-  display: flex;
-} */
+.reviewAreaIn_chMain:nth-of-type(2n) {
+  margin-left: 20px;
+}
 
-.reviewArea_chMain form label {
+.reviewAreaIn_chMain form label {
   display: inline-block;
 }
 
-.reviewArea_chMain form label:first-of-type {
+.reviewArea_chMainIn form label:first-of-type {
   margin: 0 60px 0 0;
 }
