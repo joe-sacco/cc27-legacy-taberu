@@ -12,8 +12,8 @@ function Header() {
         <ul className="nav_list">
             <li className="nav_item"><Link to="/OwnerLoginMain">Top</Link></li>
             <li className="nav_item"><Link to="/OwnerFamily">Family</Link></li>
-            <li className="nav_item"><Link to="/OwnerPost">Recipes</Link></li>
-            <li className="nav_item"><Link to="#">Planned Menus</Link></li>
+            <li className="nav_item"><Link to="/OwnerRecipe">Recipes</Link></li>
+            <li className="nav_item"><Link to="/ChildMain">Menu To Review</Link></li>
           </ul>
       </nav>
      <h1 className="logo">taberu</h1>

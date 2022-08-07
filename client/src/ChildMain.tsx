@@ -12,7 +12,7 @@ function ChildMain() {
   return (
     <div className="TopChild">
       <main>
-        <p>How was it?</p>
+        <p>Did you enjoy the meal?</p>
         <div className='mainVisual'>
           <img src= { dummy } alt="taberu" />
         </div>
