@@ -4,6 +4,10 @@ import dummy from './images/dummy.png';
 import like from './images/like.png';
 import dislike from './images/dislike.png';
 
+
+// GET recipe_review (all the review requested recipe to display on childMain page)
+// after child review "like"/"dislike" => PATCH review_recipe for review
+
 function ChildMain() {
   return (
     <div className="TopChild">

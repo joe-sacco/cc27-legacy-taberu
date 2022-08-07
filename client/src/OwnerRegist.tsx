@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
+const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
 
 interface test {
   last_name: string;
@@ -11,7 +14,8 @@ interface test {
   pincode: number;
 }
 
-function OwnerRegist() {
+const OwnerRegist: React.FC = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -29,7 +33,6 @@ function OwnerRegist() {
     // console.log("👏👏👏👏👏👏");
     // console.log(data);
     // return data;
-    const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
     // const newAccountInfo = {
     //   first_name: "",
     //   last_name: "",

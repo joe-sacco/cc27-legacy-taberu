@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -18,14 +18,16 @@ import "./App.css";
 import "./components/Text.css";
 import "./components/Header.css";
 
+
 function App() {
+  const [accountId, setAccountId] = useState<number | undefined>();
   return (
     <div className="AppChild">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<OwnerTop />} />
           <Route path="/OwnerRegist" element={<OwnerRegist />} />
-          <Route path="/OwnerLogin" element={<OwnerLogin />} />
+          <Route path="/OwnerLogin" element={<OwnerLogin setAccountId={setAccountId} />} />
           <Route
             path="/OwnerLoginMain"
             element={

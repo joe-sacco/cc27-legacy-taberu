@@ -2,13 +2,21 @@ import React from "react";
 import "./App.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
+const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
 
 interface test {
   email: string;
   password: string;
 }
 
-function OwnerLogin() {
+type Props = {
+  setAccountId:(id: number | undefined) => void;
+}
+
+const OwnerLogin:React.FC<Props> = ({setAccountId}) => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -20,13 +28,11 @@ function OwnerLogin() {
     },
   });
   const onSubmit = (data: any) => {
-    // console.log(data);
-    // return data;
-    const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
 
     const accountInfo = {
       params: data,
     };
+
     axios
       .get(`${DB_URL}/account`, accountInfo)
       .then((res) => {
@@ -34,9 +40,9 @@ function OwnerLogin() {
         // So the response we're getting has user's id in it
         // And this is how we access it
         const id = res.data.id;
-        // Next thing we need to do is to assign this id and use it to get other data we need
-
-        console.log(id);
+        setAccountId(id);
+        alert("You are successfully logged in!")
+        navigate("/OwnerLoginMain");
       })
       .catch((error) => {
         // If we enter this block - there was no match in the database
@@ -50,7 +56,7 @@ function OwnerLogin() {
       <h1>taberu</h1>
       <main>
         <h1 className="logo">Login</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form action="OwnerLoginMain" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="email">E-mail *</label>
           <input
             type="email"
