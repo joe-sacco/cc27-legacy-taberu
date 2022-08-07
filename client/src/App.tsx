@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import axios from "axios";
-// import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ChildMain from "./ChildMain";
 import ChildMenu from "./ChildMenu";

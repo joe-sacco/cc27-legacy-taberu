@@ -5,7 +5,7 @@ import "./App.css";
 import { useNavigate } from "react-router-dom";
 import logo from "./images/logo.png";
 
-// const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com";
 const DB_URL = "http://localhost:8080";
 
 type Props = {

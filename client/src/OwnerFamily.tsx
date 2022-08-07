@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import { useForm } from "react-hook-form";
 
-// const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com";
 const DB_URL = "http://localhost:8080";
 
 interface addFamily {
@@ -14,12 +14,6 @@ interface addFamily {
 type Props = {
   account_id: number | undefined;
 };
-
-//TO DO::
-//[✅] Implement the DB_URL to switch automatically between localhost and Heroku depending on production/development
-//[ ] Implement a way to catcht the accountOwner's ID
-//[✅] Implement add family function
-//[ ] Make the page show newly added family automatically
 
 const OwnerFamily: React.FC<Props> = ({ account_id }) => {
   const [familyMember, setFamilyMember] = useState<
@@ -42,9 +36,6 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
       ? account_id
       : Number(localStorage.getItem("account_id"));
 
-    console.log("📝📝📝📝📝");
-    console.log(obtainedId);
-
     const accountId = {
       params: {
         account_id: obtainedId,
@@ -66,7 +57,6 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
   const {
     register,
     handleSubmit,
-    // formState: { errors },
   } = useForm<addFamily>({
     defaultValues: {
       last_name: "",
