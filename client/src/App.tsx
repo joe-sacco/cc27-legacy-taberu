@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // import ReactDOM from "react-dom";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ChildMain from "./ChildMain";
+import ChildMenu from "./ChildMenu";
 import ChildDone from "./ChildDone";
 import OwnerTop from "./OwnerTop";
 import OwnerRegist from "./OwnerRegist";
@@ -68,11 +69,11 @@ function App() {
             path="/OwnerMatchFamily"
             element={
               <>
-                <Header />
                 <OwnerMatchFamily accountId={accountId} />
               </>
             }
           />
+          <Route path="/ChildMenu" element={<ChildMenu />} />
           <Route path="/ChildMain" element={<ChildMain />} />
           <Route path="/ChildDone" element={<ChildDone />} />
         </Routes>

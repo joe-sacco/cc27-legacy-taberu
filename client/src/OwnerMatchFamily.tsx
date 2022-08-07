@@ -3,6 +3,7 @@ import "./App.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import  ButtonChild from './components/Button';
 
 // const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
 const DB_URL = "http://localhost:8080";
@@ -58,7 +59,8 @@ const OwnerMatchFamily: React.FC<Props> = ({accountId}) => {
     <div className="OwnerRegist">
       <h1>taberu</h1>
       <main>
-        <h1 className="logo">Login</h1>
+        {/* <h1 className="logo">Login</h1> */}
+        <ButtonChild link={'/ChildMenu'} text={'Start as Family'} />
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="pincode">Pincode</label>
           <input
