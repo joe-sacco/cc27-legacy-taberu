@@ -51,4 +51,17 @@ module.exports = {
       return false;
     }
   },
+
+  validateRecipePlan(recipePlanInfo) {
+    if (
+      recipePlanInfo.hasOwnProperty("account_id") &&
+      recipePlanInfo.hasOwnProperty("recipe_id") &&
+      recipePlanInfo.hasOwnProperty("review_request") &&
+      recipePlanInfo.hasOwnProperty("date")
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 };
