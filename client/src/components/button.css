@@ -13,3 +13,31 @@
   display: block;
   padding: 24% 0;
 }
+
+.btuArea_top {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px auto 0;
+  width: 444px;
+}
+
+.btuArea_top .button {
+  width: 190px;
+  height: 60px;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 2px 4px 6px rgb(0, 0, 0, 0.16);
+}
+.btuArea_top .button:first-of-type {
+  background-color: rgb(42, 176, 211);
+}
+
+.btuArea_top .button:last-of-type {
+  background-color: rgb(229, 103, 29);
+}
+
+.btuArea_top .button a{
+  display: block;
+    padding: 5% 0;
+}

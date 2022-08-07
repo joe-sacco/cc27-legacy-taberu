@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@300;400;500;600&display=swap');
+
 *,
 *:before,
 *:after {
@@ -15,6 +17,23 @@ body {
   /* reset 10*1.6 = 16px, to make sure you do not get any 10px around */
 }
 
-.AppChild,.ChildMenu {
+.ChildMenu {
   background: rgb(252, 239, 226);
+}
+
+.OwnerLogin { 
+  padding: 60px 0;
+  background:rgb(250, 247, 247);
+}
+
+h1.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 6rem;
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+
+.button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
 }
