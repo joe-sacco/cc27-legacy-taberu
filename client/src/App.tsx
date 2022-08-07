@@ -69,7 +69,7 @@ function App() {
             element={
               <>
                 <Header />
-                <OwnerMatchFamily />
+                <OwnerMatchFamily accountId={accountId} />
               </>
             }
           />

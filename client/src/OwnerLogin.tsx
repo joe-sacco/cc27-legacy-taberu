@@ -43,7 +43,7 @@ const OwnerLogin:React.FC<Props> = ({setAccountId}) => {
         const id = res.data.id;
         setAccountId(id);
         alert("You are successfully logged in!")
-        navigate("/OwnerLoginMain");
+        navigate("/OwnerMatchFamily");
       })
       .catch((error) => {
         // If we enter this block - there was no match in the database
