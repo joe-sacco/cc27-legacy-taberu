@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 const DB_URL = "http://localhost:8080";
 
 interface addFamily {
-  lastname: string;
-  firstname: string;
+  last_name: string;
+  first_name: string;
 }
 
 type Props = {
@@ -30,13 +30,21 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
       last_name: string;
     }[]
   >([]);
+
   const [newFamily, setNewFamily] = useState<{
     account_id: number | undefined;
     first_name: string;
     last_name: string;
   }>();
+
   useEffect(() => {
-    const obtainedId = account_id;
+    const obtainedId = account_id
+      ? account_id
+      : Number(localStorage.getItem("account_id"));
+
+    console.log("📝📝📝📝📝");
+    console.log(obtainedId);
+
     const accountId = {
       params: {
         account_id: obtainedId,
@@ -61,19 +69,21 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
     // formState: { errors },
   } = useForm<addFamily>({
     defaultValues: {
-      lastname: "",
-      firstname: "",
+      last_name: "",
+      first_name: "",
     },
   });
 
   const newFamilyInfo = {
-    account_id: account_id,
+    account_id: account_id
+      ? account_id
+      : Number(localStorage.getItem("account_id")),
     first_name: "",
     last_name: "",
   };
   const onSubmit = (data: any) => {
-    newFamilyInfo.first_name = data.firstname;
-    newFamilyInfo.last_name = data.lastname;
+    newFamilyInfo.first_name = data.first_name;
+    newFamilyInfo.last_name = data.last_name;
     setNewFamily(newFamilyInfo);
   };
   useEffect(() => {
@@ -92,13 +102,13 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
           <input
             type="text"
             id="lastname"
-            {...register("lastname", { required: "this is required" })}
+            {...register("last_name", { required: "this is required" })}
           />
           <label htmlFor="firstname">First Name *</label>
           <input
             type="text"
             id="firstname"
-            {...register("firstname", { required: "this is required" })}
+            {...register("first_name", { required: "this is required" })}
           />
           <button>Add</button>
         </form>
