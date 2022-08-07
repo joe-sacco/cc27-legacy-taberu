@@ -64,4 +64,18 @@ module.exports = {
       return false;
     }
   },
+
+  validateRecipeReview(recipeReviewInfo) {
+    if (
+      recipeReviewInfo.hasOwnProperty("account_id") &&
+      recipeReviewInfo.hasOwnProperty("family_id") &&
+      recipeReviewInfo.hasOwnProperty("recipe_id") &&
+      recipeReviewInfo.hasOwnProperty("date") &&
+      recipeReviewInfo.hasOwnProperty("review")
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 };
