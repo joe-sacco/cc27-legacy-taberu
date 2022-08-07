@@ -46,10 +46,6 @@ h1.logo {
   padding: 0 0 20px 0;
 }
 
-h1.logo img {
-  width: 100%;
-}
-
 /* ChildeMain */
 .reviewArea_chMain {
   display: flex;
