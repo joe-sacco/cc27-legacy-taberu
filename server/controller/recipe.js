@@ -41,9 +41,21 @@ module.exports = {
 
     if (account_id && validator.validateFamilyAccountId(account_id)) {
       const planMenu = await recipeModel.getPlanMenu(account_id);
-      console.log(planMenu);
-      // res.status(200).json(planMenu);
-      res.status(200).send("Got you!");
+      res.status(200).json(planMenu);
+    } else {
+      res.status(406).send("BAD DATA. TRY AGAIN");
+    }
+  },
+
+  async createRecipeReview(req, res) {
+    const recipeReviewObject = await req.body;
+
+    recipeReviewObject.date = new Date();
+
+    if (validator.validateRecipeReview(recipeReviewObject)) {
+      await recipeModel.createRecipeReview(recipeReviewObject);
+      console.log(recipeReviewObject);
+      res.status(201).send("CREATED");
     } else {
       res.status(406).send("BAD DATA. TRY AGAIN");
     }

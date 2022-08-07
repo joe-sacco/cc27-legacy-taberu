@@ -2,6 +2,7 @@ const knex = require("../db/knex/knex");
 
 const RECIPE_TABLE = "recipe";
 const DAILY_MENU_TABLE = "daily_menu";
+const RECIPE_REVIEW_TABLE = "recipe_review";
 
 module.exports = {
   RECIPE_TABLE,
@@ -24,5 +25,9 @@ module.exports = {
       .from(DAILY_MENU_TABLE)
       .where({ account_id: receivedId })
       .join("recipe", "daily_menu.recipe_id", "=", "recipe.id");
+  },
+
+  createRecipeReview(data) {
+    return knex.insert(data).into(RECIPE_REVIEW_TABLE);
   },
 };
