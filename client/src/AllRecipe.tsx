@@ -18,7 +18,6 @@ const OwnerRecipe: React.FC = () => {
   );
   const [newRecipe, setNewRecipe] = useState<{ name: string }>();
   const [reviewRecipeId, setReviewRecipeId] = useState<number | undefined>();
-  // const [recipeWithReview, setRecipeWithReview] = useState<{recipe_id: number, review: number}[]>([]);
 
   // This is to render all recipes on the page
   useEffect(() => {
@@ -68,35 +67,6 @@ const OwnerRecipe: React.FC = () => {
       console.log("🥣🥣🥣🥣🥣", recipeRequestReview);
     }
   }, [reviewRecipeId]);
-
-  // // This is to get all recipe associate to account with reviews
-  // const accountId = {
-  //   params: {
-  //     account_id: Number(localStorage.getItem("account_id")),
-  //   },
-  // };
-  // useEffect(() => {
-  //   axios
-  //   .get(`${DB_URL}/recipe/recipeReview`, accountId)
-  //   .then((res) => {
-  //     if (res.data.length > recipeWithReview.length) {
-  //       let lastIndex = recipeWithReview.length;
-  //       setRecipeWithReview((prevRecipe) => [...prevRecipe, res.data[lastIndex]]);
-  //       for (let i = 0; i < allRecipes.length; i++) {
-  //         if (allRecipes[i].id == recipeWithReview[lastIndex].recipe_id) {
-  //           allRecipes[i].review = recipeWithReview[lastIndex].review;
-  //         }
-  //       }
-  //     }
-  //     console.log("🔥🔥🔥🔥🔥🔥", allRecipes);
-  //     console.log("🥣🥣🥣🥣🥣🥣", recipeWithReview);
-
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.response.data);
-  //     });
-  // }, [recipeWithReview]);
-
 
   return (
     <div className="OwnerRecipe">
