@@ -22,7 +22,6 @@ const ChildMain: React.FC = () => {
   // GET all the recipe that needs to be reviewed
   useEffect(() => {
     const obtainedAccountId = Number(localStorage.getItem("account_id"));
-    const obtainedFamilyId = localStorage.getItem("family_id");
 
     const accountId = {
       params: {
@@ -59,10 +58,9 @@ const ChildMain: React.FC = () => {
     request_review: false,
   };
   useEffect(() => {
-    // if (review) axios
-    // .post(`${DB_URL}/recipe/recipeReview`, reviewObj)
-    // (2) need to navigate to ChildDone page
-    // axios.put(`${DB_URL}/recipe/requestReview`, requestReview)
+    if (review) axios
+    .post(`${DB_URL}/recipe/recipeReview`, reviewObj)
+    axios.put(`${DB_URL}/recipe/requestReview`, requestReview)
 
     if (review) {
       navigate("/ChildDone", { state: { review } });
