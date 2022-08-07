@@ -19,11 +19,12 @@ const ChildMain: React.FC = () => {
 
   // GET all the recipe that needs to be reviewed
   useEffect(() => {
-    const obtainedId = Number(localStorage.getItem("account_id"));
+    const obtainedAccountId = Number(localStorage.getItem("account_id"));
+    const obtainedFamilyId = localStorage.getItem("family_id")
 
     const accountId = {
       params: {
-        account_id: obtainedId,
+        account_id: obtainedAccountId,
       },
     };
     if (recipeToReview) axios
@@ -41,7 +42,7 @@ const ChildMain: React.FC = () => {
   //POST the review to the recipe_review
   const reviewObj = {
     account_id: Number(localStorage.getItem("account_id")),
-    family_id: 3,
+    family_id: Number(localStorage.getItem("family_id")),
     recipe_id: review?.recipe_id,
     review: review?.review
   }
@@ -51,13 +52,15 @@ const ChildMain: React.FC = () => {
     request_review: false
   }
   useEffect(() => {
-    if (review) axios
-    .post(`${DB_URL}/recipe/recipeReview`, reviewObj)
+    // if (review) axios
+    // .post(`${DB_URL}/recipe/recipeReview`, reviewObj)
     // (2) need to navigate to ChildDone page
-    axios.put(`${DB_URL}/recipe/requestReview`, requestReview)
+    // axios.put(`${DB_URL}/recipe/requestReview`, requestReview)
     
-    if (review) navigate("/ChildDone", {state:{review}});
-    console.log("🟡🟡🟡🟡", recipeToReview)
+    if (review) {
+      navigate("/ChildDone", {state:{review}});
+      console.log("🟡🟡🟡🟡", reviewObj);
+    }
   },[review])
 
   return (
@@ -72,7 +75,7 @@ const ChildMain: React.FC = () => {
         </div>
         {recipeToReview.map((recipe, i) => {
           return (
-            <div key={recipe.recipe_id}>
+            <div key={recipe.recipe_id + "_" + i}>
               <p>{recipe.name}</p>
               <form>
               <label> 
@@ -92,7 +95,7 @@ const ChildMain: React.FC = () => {
                   e.preventDefault();
                   setReview({
                     recipe_id: recipe.recipe_id,
-                    review: 1
+                    review: -1
                   });
                   recipeToReview.splice(i, 1);
                   }}  />
