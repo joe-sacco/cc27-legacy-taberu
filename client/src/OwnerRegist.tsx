@@ -66,7 +66,9 @@ const OwnerRegist: React.FC = () => {
         <div className="formArea_owRegist">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="inputArea_owRegist">
-              <label htmlFor="lastname">Last Name *</label>
+              <label htmlFor="lastname">
+                Last Name <span>*</span>
+              </label>
               <input
                 type="text"
                 id="lastname"
@@ -74,7 +76,9 @@ const OwnerRegist: React.FC = () => {
               />
             </div>
             <div className="inputArea_owRegist">
-              <label htmlFor="firstname">First Name *</label>
+              <label htmlFor="firstname">
+                First Name <span>*</span>
+              </label>
               <input
                 type="text"
                 id="firstname"
@@ -82,7 +86,9 @@ const OwnerRegist: React.FC = () => {
               />
             </div>
             <div className="inputArea_owRegist">
-              <label htmlFor="email">E-mail *</label>
+              <label htmlFor="email">
+                E-mail <span>*</span>
+              </label>
               <input
                 type="email"
                 id="email"
@@ -90,7 +96,9 @@ const OwnerRegist: React.FC = () => {
               />
             </div>
             <div className="inputArea_owRegist">
-              <label htmlFor="password">Password *</label>
+              <label htmlFor="password">
+                Password <span>*</span>
+              </label>
               <input
                 type="password"
                 id="password"
@@ -98,7 +106,9 @@ const OwnerRegist: React.FC = () => {
               />
             </div>
             <div className="inputArea_owRegist">
-              <label htmlFor="pincode">Pincode *</label>
+              <label htmlFor="pincode">
+                Pincode <span>*</span>
+              </label>
               <input
                 type="number"
                 id="pincode"
