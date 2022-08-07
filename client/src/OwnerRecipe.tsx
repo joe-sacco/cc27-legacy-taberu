@@ -58,7 +58,7 @@ const OwnerRecipe: React.FC = () => {
   
   // This is to add recipe to plan_menu (review request)
   const recipeRequestReview = {
-    account_id: localStorage.getItem("account_id"),
+    account_id: Number(localStorage.getItem("account_id")),
     recipe_id: reviewRecipeId,
     review_request: true
   };

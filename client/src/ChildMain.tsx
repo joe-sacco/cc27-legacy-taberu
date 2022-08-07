@@ -18,7 +18,7 @@ const ChildMain: React.FC = () => {
     // (1) if review is received, then need to PATCH to server to add review to recipe
 
     // (2) need to navigate to ChildDone page
-    navigate("/ChildDone", {state:{review}});
+    if (review) navigate("/ChildDone", {state:{review}});
     console.log("🟡🟡🟡🟡", review)
   },[review])
 
