@@ -18,7 +18,6 @@ import "./App.css";
 import "./components/Text.css";
 import "./components/Header.css";
 
-
 function App() {
   const [accountId, setAccountId] = useState<number | undefined>();
   return (
@@ -27,7 +26,10 @@ function App() {
         <Routes>
           <Route path="/" element={<OwnerTop />} />
           <Route path="/OwnerRegist" element={<OwnerRegist />} />
-          <Route path="/OwnerLogin" element={<OwnerLogin setAccountId={setAccountId} />} />
+          <Route
+            path="/OwnerLogin"
+            element={<OwnerLogin setAccountId={setAccountId} />}
+          />
           <Route
             path="/OwnerLoginMain"
             element={
@@ -51,7 +53,7 @@ function App() {
             element={
               <>
                 <Header />
-                <OwnerFamily />
+                <OwnerFamily account_id={accountId} />
               </>
             }
           />
