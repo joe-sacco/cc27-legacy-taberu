@@ -93,25 +93,35 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
 
   return (
     <div className="OwnerRegist">
-      <h1>taberu</h1>
       <main>
-        <h1 className="logo">Register</h1>
-        {/* <form action="/OwnerLoginMain"> */}
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="lastname">Last Name *</label>
-          <input
-            type="text"
-            id="lastname"
-            {...register("last_name", { required: "this is required" })}
-          />
-          <label htmlFor="firstname">First Name *</label>
-          <input
-            type="text"
-            id="firstname"
-            {...register("first_name", { required: "this is required" })}
-          />
-          <button>Add</button>
-        </form>
+        <h2>Register</h2>
+        <div className="formArea_owRegist">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="inputArea_owRegist">
+              <label htmlFor="lastname">
+                Last Name <span>*</span>
+              </label>
+              <input
+                type="text"
+                id="lastname"
+                placeholder="Hasegawa"
+                {...register("last_name", { required: "this is required" })}
+              />
+            </div>
+            <div className="inputArea_owRegist">
+              <label htmlFor="firstname">
+                First Name <span>*</span>
+              </label>
+              <input
+                type="text"
+                id="firstname"
+                placeholder="Ayumi"
+                {...register("first_name", { required: "this is required" })}
+              />
+            </div>
+            <button>Add</button>
+          </form>
+        </div>
       </main>
       <section>
         <h2>Family's Name</h2>

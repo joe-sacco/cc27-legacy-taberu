@@ -11,7 +11,7 @@
 }
 
 /* OwnerLoginMain */
-.text_owLoginMain {
+.text_owLoginMain{
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin: 0 0 40px 0;
@@ -19,4 +19,11 @@
 
 .text_owLoginMain h2{
   font-size: 2.4rem;
+}
+
+/* OwnerFamily */
+.OwnerRegist h2 {
+  font-size: 2.4rem;
+  margin: 0 0 40px 0;
+  text-align: center;
 }

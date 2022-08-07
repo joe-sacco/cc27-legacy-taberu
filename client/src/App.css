@@ -23,7 +23,8 @@ body {
 
 .OwnerLogin,
 .OwnerRecipe,
-.OwnerLoginMain { 
+.OwnerLoginMain,
+.OwnerRegist { 
   padding: 60px 0;
   background:rgb(250, 247, 247);
 }
