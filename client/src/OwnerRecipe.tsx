@@ -13,11 +13,12 @@ interface addRecipe {
 }
 
 const OwnerRecipe: React.FC = () => {
-  const [allRecipes, setAllRecipes] = useState<{ id: number; name: string }[]>(
+  const [allRecipes, setAllRecipes] = useState<{ id: number; name: string; review: number | undefined }[]>(
     []
   );
   const [newRecipe, setNewRecipe] = useState<{ name: string }>();
   const [reviewRecipeId, setReviewRecipeId] = useState<number | undefined>();
+  const [recipeWithReview, setRecipeWithReview] = useState<{recipe_id: number, review: number}[]>([]);
 
   // This is to render all recipes on the page
   useEffect(() => {
@@ -68,6 +69,31 @@ const OwnerRecipe: React.FC = () => {
     }
   }, [reviewRecipeId]);
 
+  // This is to get all recipe associate to account with reviews
+  const accountId = {
+    params: {
+      account_id: Number(localStorage.getItem("account_id")),
+    },
+  };
+  useEffect(() => {
+    axios
+      .get(`${DB_URL}/recipeReview`, accountId)
+      .then((res) => {
+        if (res.data.length > recipeWithReview.length) {
+          let lastIndex = recipeWithReview.length;
+          setRecipeWithReview((prevRecipe) => [...prevRecipe, res.data[lastIndex]]);
+          for (let i = 0; i < allRecipes.length; i++) {
+            if (allRecipes[i].id === recipeWithReview[lastIndex].recipe_id) {
+              allRecipes[i].review = recipeWithReview[lastIndex].review;
+            }
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  }, [recipeWithReview]);
+
   return (
     <div className="OwnerRecipe">
       <main>
@@ -91,25 +117,48 @@ const OwnerRecipe: React.FC = () => {
         </div>
 
         {allRecipes.reverse().map((recipe) => {
-          return (
-            <div key={recipe.id} className="reviewArea_owRecipe">
-              <p>{recipe.name}</p>
-              <label>
-                {" "}
-                🍴 Review Request
-                <button
-                  type="submit"
-                  value={recipe.id}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setReviewRecipeId(recipe.id);
-                  }}
-                >
-                  submit
-                </button>
-              </label>
-            </div>
-          );
+          if (recipe.review) {
+            return (
+              <div key={recipe.id} className="reviewArea_owRecipe">
+                <p>{recipe.name}</p>
+                <label>
+                  <p>{"⭐️".repeat(recipe.review)}</p>
+                  {" "}
+                  🍴 Review Request
+                  <button
+                    type="submit"
+                    value={recipe.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setReviewRecipeId(recipe.id);
+                    }}
+                  >
+                    submit
+                  </button>
+                </label>
+              </div>
+            );
+          } else {
+            return (
+              <div key={recipe.id} className="reviewArea_owRecipe">
+                <p>{recipe.name}</p>
+                <label>
+                  {" "}
+                  🍴 Review Request
+                  <button
+                    type="submit"
+                    value={recipe.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setReviewRecipeId(recipe.id);
+                    }}
+                  >
+                    submit
+                  </button>
+                </label>
+              </div>
+            );
+          }
         })}
       </main>
     </div>
