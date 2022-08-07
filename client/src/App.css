@@ -18,7 +18,8 @@ body {
 }
 
 .ChildMenu,
-.TopChild {
+.TopChild,
+.ChildDone {
   background: rgb(252, 239, 226);
   padding: 60px 0;
 }

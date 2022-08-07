@@ -1,6 +1,7 @@
-import React from 'react';
-import  ButtonChild from './components/Button';
-import './components/images.css';
+import React from "react";
+import ButtonChild from "./components/Button";
+import "./components/images.css";
+import logo from "./images/logo.png";
 
 // type Props = {
 //   review: number | undefined;
@@ -8,14 +9,26 @@ import './components/images.css';
 
 const ChildDone: React.FC = () => {
   return (
-    <div className="TopChild">
+    <div className="ChildDone">
       <main>
-        <p>Happy enjoy<br />yummy yummy time!</p>
-        <ButtonChild link="/ChildMain" text={'Next'} />
-        <ButtonChild link="/ChildMenu" text={'Done'} />
+        <h1 className="logo">
+          <img src={logo} alt="taberu" />
+        </h1>
+        <p className="text_chDone">
+          Happy enjoy
+          <br />
+          yummy yummy time!
+        </p>
+        <div className="btnArea_chDone">
+          <ButtonChild link="/ChildMain" text={"Next"} />
+          <ButtonChild link="/ChildMenu" text={"Done"} />
+        </div>
       </main>
+      <p className="gobackBtn_chMenu">
+        <a href="./OwnerMatchFamily">Go back to Owner page</a>
+      </p>
     </div>
   );
-}
+};
 
 export default ChildDone;

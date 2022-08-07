@@ -88,6 +88,9 @@
 
 .nav_content .nav_list li a {
   color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #drawer_input:checked~.nav_content {

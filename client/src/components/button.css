@@ -170,7 +170,7 @@
 }
 
 .gobackBtn_chMenu {
-  background-color: rgb(229, 103, 29);
+  background-color: rgb(22, 182, 137);
   font-family: 'Montserrat', sans-serif;
   width: 250px;
   height: 50px;
@@ -181,4 +181,35 @@
   text-align: center;
   border-radius: 8px;
   box-shadow: 2px 4px 6px rgb(0, 0, 0, 0.16);
+}
+
+/* ChildeDone */
+.btnArea_chDone {
+  display: flex;
+  width: 420px;
+  margin: 30px auto 0;
+}
+
+.btnArea_chDone .button {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 50px;
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 2px 4px 6px rgb(0 0 0 / 16%);
+}
+
+.btnArea_chDone .button:first-of-type {
+  margin: 0 20px 0 0;
+}
+
+.btnArea_chDone .button:first-of-type {
+  background-color: rgb(42, 176, 211);
+}
+
+.btnArea_chDone .button:last-of-type {
+  background-color: rgb(229, 103, 29);
 }
