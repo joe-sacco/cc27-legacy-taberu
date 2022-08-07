@@ -20,4 +20,17 @@ module.exports = {
       res.status(200).json(allRecipes);
     }
   },
+
+  async createPlanMenu(req, res) {
+    const recipePlanObject = await req.body;
+
+    recipePlanObject.date = new Date();
+
+    if (validator.validateRecipePlan(recipePlanObject)) {
+      await recipeModel.createPlanMenu(recipePlanObject);
+      res.status(201).send("CREATED");
+    } else {
+      res.status(406).send("BAD DATA. TRY AGAIN");
+    }
+  },
 };
