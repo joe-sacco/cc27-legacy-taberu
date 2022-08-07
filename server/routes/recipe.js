@@ -6,5 +6,6 @@ router.post("/", recipeController.createRecipe);
 router.get("/", recipeController.getRecipe);
 router.post("/requestReview", recipeController.createPlanMenu);
 router.get("/requestReview", recipeController.getPlanMenu);
+router.post("/recipeReview", recipeController.createRecipeReview);
 
 module.exports = router;
