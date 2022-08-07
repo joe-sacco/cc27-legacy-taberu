@@ -92,12 +92,12 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
   }, [newFamily]);
 
   return (
-    <div className="OwnerRegist">
+    <div className="OwnerFamily">
       <main>
         <h2>Register</h2>
-        <div className="formArea_owRegist">
+        <div className="formArea_owFamily">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="inputArea_owRegist">
+            <div className="inputArea_owFamily">
               <label htmlFor="lastname">
                 Last Name <span>*</span>
               </label>
@@ -108,7 +108,7 @@ const OwnerFamily: React.FC<Props> = ({ account_id }) => {
                 {...register("last_name", { required: "this is required" })}
               />
             </div>
-            <div className="inputArea_owRegist">
+            <div className="inputArea_owFamily">
               <label htmlFor="firstname">
                 First Name <span>*</span>
               </label>
