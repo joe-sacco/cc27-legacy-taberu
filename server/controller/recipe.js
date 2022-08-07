@@ -72,4 +72,17 @@ module.exports = {
       res.status(406).send("BAD DATA. TRY AGAIN");
     }
   },
+
+  async getRecipeReview(req, res) {
+    const account_id = (await req.query.account_id)
+      ? Number(req.query.account_id)
+      : undefined;
+
+    if (account_id && validator.validateFamilyAccountId(account_id)) {
+      const recipeReviews = await recipeModel.getRecipeReview(account_id);
+      res.status(200).json(recipeReviews);
+    } else {
+      res.status(406).send("BAD DATA. TRY AGAIN");
+    }
+  },
 };
