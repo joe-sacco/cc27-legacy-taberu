@@ -13,6 +13,7 @@ import OwnerLoginMain from "./OwnerLoginMain";
 import OwnerPost from "./OwnerPost";
 import OwnerFamily from "./OwnerFamily";
 import OwnerRecipe from "./OwnerRecipe";
+import AllRecipe from "./AllRecipe";
 import Header from "./components/Header";
 import "./components/Reset.css";
 import "./App.css";
@@ -64,6 +65,15 @@ function App() {
               <>
                 <Header />
                 <OwnerRecipe />
+              </>
+            }
+          />
+           <Route
+            path="/AllRecipe"
+            element={
+              <>
+                <Header />
+                <AllRecipe />
               </>
             }
           />
