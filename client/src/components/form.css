@@ -4,26 +4,30 @@
   margin: 0 auto;
 }
 
-.formArea_owRegist {
+.formArea_owRegist,
+.formArea_owLogin {
     width: 500px;
     margin: 0 auto 30px;
 }
 
 .formArea_owRecipe label,
-.inputArea_owRegist label {
+.inputArea_owRegist label,
+.formArea_owLogin label {
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-size: 2.4rem;
+  font-size: 2.0rem;
   padding: 0 20px 0 0;
 }
 .formArea_owRecipe label span,
-.inputArea_owRegist label span{
+.inputArea_owRegist label span,
+.formArea_owLogin label span{
   font-size: 1.6rem;
   color: #ff0000;
 }
 
 .formArea_owRecipe input[type=text],
-.inputArea_owRegist input[type=text] {
+.inputArea_owRegist input[type=text],
+.formArea_owLogin input[type=email],
+.formArea_owLogin input[type=password] {
   width: 100%;
   margin: 10px 0;
   padding: 10px;
@@ -35,7 +39,8 @@
 }
 
 .formArea_owRecipe button,
-.formArea_owRegist button {
+.formArea_owRegist button,
+.formArea_owLogin button {
   background: rgb(229, 103, 29);
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -49,7 +54,10 @@
   margin: 30px auto 0;
 }
 
-.inputArea_owRegist:first-of-type {
+.inputArea_owRegist:first-of-type,
+.inputArea_owLogin:first-of-type {
   margin: 0 0 20px 0;
-
 }
+
+/* OwnerLogin */
+

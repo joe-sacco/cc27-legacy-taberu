@@ -55,25 +55,35 @@ const OwnerLogin: React.FC<Props> = ({ setAccountId }) => {
   };
 
   return (
-    <div className="OwnerRegist">
-      <h1>taberu</h1>
+    <div className="OwnerLogin">
       <main>
-        <h1 className="logo">Login</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="email">E-mail *</label>
-          <input
-            type="email"
-            id="email"
-            {...register("email", { required: "this is required" })}
-          />
-          <label htmlFor="password">Password *</label>
-          <input
-            type="password"
-            id="password"
-            {...register("password", { required: "this is required" })}
-          />
-          <button type="submit">Submit</button>
-        </form>
+        <h1 className="logo">taberu</h1>
+        <h2>Login</h2>
+        <div className="formArea_owLogin">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="inputArea_owLogin">
+              <label htmlFor="email">
+                E-mail <span>*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                {...register("email", { required: "this is required" })}
+              />
+            </div>
+            <div className="inputArea_owLogin">
+              <label htmlFor="password">
+                Password <span>*</span>
+              </label>
+              <input
+                type="password"
+                id="password"
+                {...register("password", { required: "this is required" })}
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </main>
     </div>
   );
