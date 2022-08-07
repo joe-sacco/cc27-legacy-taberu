@@ -37,4 +37,12 @@ module.exports = {
   createRecipeReview(data) {
     return knex.insert(data).into(RECIPE_REVIEW_TABLE);
   },
+
+  getRecipeReview(receivedId) {
+    // send back recipe_id and review
+    return knex
+      .select("*")
+      .from(RECIPE_REVIEW_TABLE)
+      .where({ account_id: receivedId });
+  },
 };
