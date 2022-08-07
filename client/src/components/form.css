@@ -1,20 +1,32 @@
 /* OwnerRecipe */
-.formArea_owRecipe {
+
+.formArea_owRecipe,
+.formArea_owFamily,
+.formArea_owRegist,
+.formArea_owLogin,
+.formArea_owMatchFamily {
   width: 500px;
+}
+
+.formArea_owRecipe {
   margin: 0 auto;
 }
 
 .formArea_owFamily,
 .formArea_owRegist,
 .formArea_owLogin {
-    width: 500px;
-    margin: 0 auto 30px;
+  margin: 0 auto 30px;
+}
+
+.formArea_owMatchFamily {
+  margin: 30px auto 0;
 }
 
 .formArea_owRecipe label,
 .inputArea_owFamily label,
 .inputArea_owRegist label,
-.formArea_owLogin label {
+.formArea_owLogin label,
+.inputArea_owMatchFamily label {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.0rem;
   padding: 0 20px 0 0;
@@ -35,7 +47,8 @@
 .formArea_owLogin input[type=password],
 .inputArea_owRegist input[type=email],
 .inputArea_owRegist input[type=password],
-.inputArea_owRegist input[type=number] {
+.inputArea_owRegist input[type=number],
+.inputArea_owMatchFamily input[type=number]{
   width: 100%;
   margin: 10px 0 30px;
   padding: 10px;
@@ -49,7 +62,8 @@
 .formArea_owRecipe button,
 .formArea_owFamily button,
 .formArea_owRegist button,
-.formArea_owLogin button {
+.formArea_owLogin button,
+.formArea_owMatchFamily button {
   background: rgb(229, 103, 29);
   font-family: 'Montserrat', sans-serif;
   width: 120px;

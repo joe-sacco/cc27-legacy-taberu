@@ -58,20 +58,25 @@ const OwnerMatchFamily: React.FC<Props> = ({ accountId }) => {
   };
 
   return (
-    <div className="OwnerRegist">
-      <h1>taberu</h1>
+    <div className="OwnerMatchFamily">
+      <h1 className="logo">taberu</h1>
       <main>
         {/* <h1 className="logo">Login</h1> */}
         <ButtonChild link={"/ChildMenu"} text={"Start as Family"} />
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="pincode">Pincode</label>
-          <input
-            type="number"
-            id="pincode"
-            {...register("pincode", { required: "this is required" })}
-          />
-          <button type="submit">Submit</button>
-        </form>
+        <div className="formArea_owMatchFamily">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="inputArea_owMatchFamily">
+              <label htmlFor="pincode">Pincode</label>
+              <input
+                type="number"
+                id="pincode"
+                placeholder="12345"
+                {...register("pincode", { required: "this is required" })}
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
         <ul>
           <li>{/* <a href="#">Mizuki</a> */}</li>
           <li>{/* <a href="#">Makoto</a> */}</li>

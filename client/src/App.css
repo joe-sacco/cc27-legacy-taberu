@@ -25,7 +25,8 @@ body {
 .OwnerRecipe,
 .OwnerLoginMain,
 .OwnerFamily,
-.OwnerRegist { 
+.OwnerRegist,
+.OwnerMatchFamily { 
   padding: 60px 0;
   background:rgb(250, 247, 247);
 }
@@ -35,9 +36,4 @@ h1.logo {
   font-size: 6rem;
   padding: 0 0 20px 0;
   text-align: center;
-}
-
-.button {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 32px;
 }
