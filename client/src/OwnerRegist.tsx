@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 // const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
 const DB_URL = "http://localhost:8080";
@@ -49,7 +49,7 @@ const OwnerRegist: React.FC = () => {
       const responseCode = res.status;
       // So here we can redirect to LOGIN PAGE if response code is 201;
       if (responseCode === 201) {
-        alert("Account created. Welcome to taberu!")
+        alert("Account created. Welcome to taberu!");
         navigate("/OwnerLogin");
       }
     });
@@ -57,45 +57,57 @@ const OwnerRegist: React.FC = () => {
 
   return (
     <div className="OwnerRegist">
-      <h1>taberu</h1>
+      <h1 className="logo">taberu</h1>
       <main>
-        <h1 className="logo">Register</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="lastname">Last Name *</label>
-          <input
-            type="text"
-            id="lastname"
-            {...register("last_name", { required: "this is required" })}
-          />
-          <label htmlFor="firstname">First Name *</label>
-          <input
-            type="text"
-            id="firstname"
-            {...register("first_name", { required: "this is required" })}
-          />
-          <label htmlFor="email">E-mail *</label>
-          <input
-            type="email"
-            id="email"
-            {...register("email", { required: "this is required" })}
-          />
-          <label htmlFor="password">Password *</label>
-          <input
-            type="password"
-            id="password"
-            {...register("password", { required: "this is required" })}
-          />
-          <label htmlFor="pincode">Pincode *</label>
-          <input
-            type="number"
-            id="pincode"
-            {...register("pincode", { required: "this is required" })}
-          />
-          <button type="submit">Submit</button>
-        </form>
+        <h2>Register</h2>
+        <div className="formArea_owRegist">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="inputArea_owRegist">
+              <label htmlFor="lastname">Last Name *</label>
+              <input
+                type="text"
+                id="lastname"
+                {...register("last_name", { required: "this is required" })}
+              />
+            </div>
+            <div className="inputArea_owRegist">
+              <label htmlFor="firstname">First Name *</label>
+              <input
+                type="text"
+                id="firstname"
+                {...register("first_name", { required: "this is required" })}
+              />
+            </div>
+            <div className="inputArea_owRegist">
+              <label htmlFor="email">E-mail *</label>
+              <input
+                type="email"
+                id="email"
+                {...register("email", { required: "this is required" })}
+              />
+            </div>
+            <div className="inputArea_owRegist">
+              <label htmlFor="password">Password *</label>
+              <input
+                type="password"
+                id="password"
+                {...register("password", { required: "this is required" })}
+              />
+            </div>
+            <div className="inputArea_owRegist">
+              <label htmlFor="pincode">Pincode *</label>
+              <input
+                type="number"
+                id="pincode"
+                {...register("pincode", { required: "this is required" })}
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </main>
     </div>
   );
-}
+};
 
 export default OwnerRegist;

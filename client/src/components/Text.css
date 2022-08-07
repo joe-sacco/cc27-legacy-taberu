@@ -23,8 +23,9 @@
 }
 
 /* OwnerFamily */
-.OwnerRegist h2,
-.OwnerLogin h2 {
+.OwnerFamily h2,
+.OwnerLogin h2,
+.OwnerRegist h2 {
   font-family: 'Montserrat', sans-serif;
   /* font-size: 2.4rem; */
   font-size: 3.2rem;
