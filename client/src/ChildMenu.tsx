@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import  ButtonChild from './components/Button';
 import axios from 'axios';
 import './App.css';
+import { useNavigate } from "react-router-dom";
 
 // const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
 const DB_URL = "http://localhost:8080";
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const ChildMenu: React.FC<Props> = ({ account_id }) => {
+  const navigate = useNavigate();
   const [familyMember, setFamilyMember] = useState<
     {
       id: number;
@@ -53,9 +55,18 @@ const ChildMenu: React.FC<Props> = ({ account_id }) => {
         {familyMember.map((family) => {
           return (
             <div key={family.id}>
-              <ButtonChild link={'/ChildMain'} text={family.first_name} />
+              {/* <ButtonChild link={'/ChildMain'} text={family.first_name}/> */}
+              <label> {family.first_name}
+              <button type="submit" onClick={(e) => {
+                e.preventDefault();
+                const id = String(family.id);
+                localStorage.setItem("family_id", id)
+                navigate("/ChildMain")
+              }} />
+              </label>
             </div>
-          )
+          );
+          
         })}
       </div>
     </div>
