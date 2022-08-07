@@ -17,8 +17,10 @@ body {
   /* reset 10*1.6 = 16px, to make sure you do not get any 10px around */
 }
 
-.ChildMenu {
+.ChildMenu,
+.TopChild {
   background: rgb(252, 239, 226);
+  padding: 60px 0;
 }
 
 .OwnerLogin,

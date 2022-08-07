@@ -82,7 +82,23 @@
 }
 
 /* OwnerLogin */
-
 .inputArea_owRegist {
   margin: 0 0 20px 0;
+}
+
+/* ChildMain */
+.reviewArea_chMain {
+  text-align: center;
+}
+
+/* .reviewArea_chMain form {
+  display: flex;
+} */
+
+.reviewArea_chMain form label {
+  display: inline-block;
+}
+
+.reviewArea_chMain form label:first-of-type {
+  margin: 0 60px 0 0;
 }
