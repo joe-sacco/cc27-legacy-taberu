@@ -6,11 +6,8 @@ import dislike from "./images/dislike.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-// const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com";
 const DB_URL = "http://localhost:8080";
-
-// GET recipe_review (all the review requested recipe to display on childMain page)
-// after child review "like"/"dislike" => PATCH review_recipe for review
 
 const ChildMain: React.FC = () => {
   const navigate = useNavigate();
@@ -19,7 +16,6 @@ const ChildMain: React.FC = () => {
     { name: string; recipe_id: number }[]
   >([]);
 
-  // GET all the recipe that needs to be reviewed
   useEffect(() => {
     const obtainedAccountId = Number(localStorage.getItem("account_id"));
 
@@ -45,7 +41,6 @@ const ChildMain: React.FC = () => {
         });
   }, [recipeToReview]);
 
-  //POST the review to the recipe_review
   const reviewObj = {
     account_id: Number(localStorage.getItem("account_id")),
     family_id: Number(localStorage.getItem("family_id")),
@@ -74,7 +69,6 @@ const ChildMain: React.FC = () => {
         <div className="mainVisual">
           <img src={dummy} alt="taberu" />
         </div>
-        <p className="text_chMain">Please Review Below Recipe</p>
         <div className="reviewArea_chMain">
           {recipeToReview.map((recipe, i) => {
             return (

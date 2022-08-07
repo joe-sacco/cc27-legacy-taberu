@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ButtonChild from "./components/Button";
 
-// const DB_URL = "https://taberu-server.herokuapp.com" || "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com";
 const DB_URL = "http://localhost:8080";
 
 interface test {

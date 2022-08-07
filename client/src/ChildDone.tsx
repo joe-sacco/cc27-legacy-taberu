@@ -3,10 +3,6 @@ import ButtonChild from "./components/Button";
 import "./components/images.css";
 import logo from "./images/logo.png";
 
-// type Props = {
-//   review: number | undefined;
-// }
-
 const ChildDone: React.FC = () => {
   return (
     <div className="ChildDone">
