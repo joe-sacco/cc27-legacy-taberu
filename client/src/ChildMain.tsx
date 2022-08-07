@@ -19,16 +19,23 @@ const ChildMain: React.FC = () => {
 
   // GET all the recipe that needs to be reviewed
   useEffect(() => {
-    // if (recipeToReview) axios
-    // .get(`${DB_URL}/recipe/requestReview`)
-    // .then((res) => {
-    //   if (res.data.length > recipeToReview.length) {
-    //     let lastIndex = recipeToReview.length;
-    //     setRecipeToReview((prevRecipe) => [...prevRecipe, res.data[lastIndex]])
-    //   }
-    // }).catch((error) => {
-    //   console.log(error.response.data);
-    // });
+    const obtainedId = Number(localStorage.getItem("account_id"));
+
+    const accountId = {
+      params: {
+        account_id: obtainedId,
+      },
+    };
+    if (recipeToReview) axios
+    .get(`${DB_URL}/recipe/requestReview`, accountId)
+    .then((res) => {
+      if (res.data.length > recipeToReview.length) {
+        let lastIndex = recipeToReview.length;
+        setRecipeToReview((prevRecipe) => [...prevRecipe, res.data[lastIndex]])
+      }
+    }).catch((error) => {
+      console.log(error.response.data);
+    });
   }, [recipeToReview])
 
   //POST the review to the recipe_review
@@ -38,22 +45,21 @@ const ChildMain: React.FC = () => {
     recipe_id: review?.recipe_id,
     review: review?.review
   }
+  const requestReview = {
+    account_id: Number(localStorage.getItem("account_id")),
+    recipe_id: review?.recipe_id,
+    request_review: false
+  }
   useEffect(() => {
-    // if (review) axios
-    // .post(`${DB_URL}/recipe/requestReview`, reviewObj)
+    if (review) axios
+    .post(`${DB_URL}/recipe/recipeReview`, reviewObj)
     // (2) need to navigate to ChildDone page
+    axios.patch(`${DB_URL}/recipe/requestReview`, requestReview)
+    
     if (review) navigate("/ChildDone", {state:{review}});
     console.log("🟡🟡🟡🟡", recipeToReview)
   },[review])
 
-  const test = [
-    {name: "Pasta", recipe_id: 3},
-    {name: "Pasta", recipe_id: 4},
-    {name: "Pasta", recipe_id: 5},
-    {name: "Pasta", recipe_id: 6},
-    {name: "Pasta", recipe_id: 7},
-    {name: "Pasta", recipe_id: 8},
-  ]
   return (
     <div className="TopChild">
       <main>
@@ -65,7 +71,6 @@ const ChildMain: React.FC = () => {
           <p>Please Review Below Recipe</p>
         </div>
         {recipeToReview.map((recipe, i) => {
-        {/* {test.map((recipe, i) => { */}
           return (
             <div key={recipe.recipe_id}>
               <p>{recipe.name}</p>
@@ -79,7 +84,6 @@ const ChildMain: React.FC = () => {
                     review: 1
                   });
                   recipeToReview.splice(i, 1);
-                  // test.splice(i, 1);
                   }} />
               </label>
               <label> 
@@ -91,7 +95,6 @@ const ChildMain: React.FC = () => {
                     review: 1
                   });
                   recipeToReview.splice(i, 1);
-                  // test.splice(i, 1);
                   }}  />
               </label>
               </form>
