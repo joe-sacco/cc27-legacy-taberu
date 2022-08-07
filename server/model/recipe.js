@@ -1,6 +1,7 @@
 const knex = require("../db/knex/knex");
 
 const RECIPE_TABLE = "recipe";
+const DAILY_MENU_TABLE = "daily_menu";
 
 module.exports = {
   RECIPE_TABLE,
@@ -10,8 +11,10 @@ module.exports = {
   },
 
   getRecipe() {
-    return knex
-    .select("*")
-    .from(RECIPE_TABLE)
-  }
+    return knex.select("*").from(RECIPE_TABLE);
+  },
+
+  createPlanMenu(data) {
+    return knex.insert(data).into(DAILY_MENU_TABLE);
+  },
 };
