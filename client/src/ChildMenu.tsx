@@ -10,7 +10,7 @@ function ChildMenu() {
         <h1 className='logo'>taberu</h1>
 
       </main>
-       <ButtonChild link={'#'} text={'Mizuki'} />
+       <ButtonChild link={'/ChildMain'} text={'Mizuki'} />
     </div>
   );
 }

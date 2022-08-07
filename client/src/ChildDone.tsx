@@ -8,7 +8,8 @@ function ChildDone() {
     <div className="TopChild">
       <main>
         <p>Happy enjoy<br />yummy yummy time!</p>
-        <ButtonChild link="/" text={'Go to top! '} />
+        <ButtonChild link="/ChildMain" text={'Next'} />
+        <ButtonChild link="/ChildMenu" text={'Done'} />
       </main>
     </div>
   );
