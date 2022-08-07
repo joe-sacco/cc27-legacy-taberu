@@ -13,61 +13,61 @@ interface addRecipe {
 }
 
 const OwnerRecipe: React.FC = () => {
-  const [allRecipes, setAllRecipes] = useState<{ id: number; name: string; review: number | undefined }[]>(
+  const [allRecipes, setAllRecipes] = useState<{ account_id: number; family_id: number; recipe_id: number; name: string; date: Date; review: number }[]>(
     []
   );
-  const [newRecipe, setNewRecipe] = useState<{ name: string }>();
-  const [reviewRecipeId, setReviewRecipeId] = useState<number | undefined>();
-  const [recipeWithReview, setRecipeWithReview] = useState<{recipe_id: number, review: number}[]>([]);
+  // const [newRecipe, setNewRecipe] = useState<{ name: string }>();
+  // const [reviewRecipeId, setReviewRecipeId] = useState<number | undefined>();
+  // const [recipeWithReview, setRecipeWithReview] = useState<{recipe_id: number, review: number}[]>([]);
 
-  // This is to render all recipes on the page
-  useEffect(() => {
-    axios
-      .get(`${DB_URL}/recipe`)
-      .then((res) => {
-        if (res.data.length > allRecipes.length) {
-          let lastIndex = allRecipes.length;
-          setAllRecipes((prevRecipe) => [...prevRecipe, res.data[lastIndex]]);
-        }
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
-  }, [allRecipes]);
+  // // This is to render all recipes on the page
+  // useEffect(() => {
+  //   axios
+  //     .get(`${DB_URL}/recipe`)
+  //     .then((res) => {
+  //       if (res.data.length > allRecipes.length) {
+  //         let lastIndex = allRecipes.length;
+  //         setAllRecipes((prevRecipe) => [...prevRecipe, res.data[lastIndex]]);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.response.data);
+  //     });
+  // }, [allRecipes]);
 
-  // This is to add recipe to the database
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm<addRecipe>({
-    defaultValues: {
-      name: "",
-    },
-  });
+  // // This is to add recipe to the database
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   // formState: { errors },
+  // } = useForm<addRecipe>({
+  //   defaultValues: {
+  //     name: "",
+  //   },
+  // });
 
-  const newRecipeInfo = { name: "" };
-  const onSubmit = (data: any) => {
-    newRecipeInfo.name = data.name;
-    setNewRecipe(newRecipeInfo);
-  };
+  // const newRecipeInfo = { name: "" };
+  // const onSubmit = (data: any) => {
+  //   newRecipeInfo.name = data.name;
+  //   setNewRecipe(newRecipeInfo);
+  // };
 
-  useEffect(() => {
-    if (newRecipe) axios.post(`${DB_URL}/recipe`, newRecipe);
-  }, [newRecipe]);
+  // useEffect(() => {
+  //   if (newRecipe) axios.post(`${DB_URL}/recipe`, newRecipe);
+  // }, [newRecipe]);
 
-  // This is to add recipe to plan_menu (review request)
-  const recipeRequestReview = {
-    account_id: Number(localStorage.getItem("account_id")),
-    recipe_id: reviewRecipeId,
-    review_request: true,
-  };
-  useEffect(() => {
-    if (reviewRecipeId) {
-      axios.post(`${DB_URL}/recipe/requestReview`, recipeRequestReview);
-      console.log("🥣🥣🥣🥣🥣", recipeRequestReview);
-    }
-  }, [reviewRecipeId]);
+  // // This is to add recipe to plan_menu (review request)
+  // const recipeRequestReview = {
+  //   account_id: Number(localStorage.getItem("account_id")),
+  //   recipe_id: reviewRecipeId,
+  //   review_request: true,
+  // };
+  // useEffect(() => {
+  //   if (reviewRecipeId) {
+  //     axios.post(`${DB_URL}/recipe/requestReview`, recipeRequestReview);
+  //     console.log("🥣🥣🥣🥣🥣", recipeRequestReview);
+  //   }
+  // }, [reviewRecipeId]);
 
   // This is to get all recipe associate to account with reviews
   const accountId = {
@@ -77,29 +77,50 @@ const OwnerRecipe: React.FC = () => {
   };
   useEffect(() => {
     axios
-      .get(`${DB_URL}/recipeReview`, accountId)
-      .then((res) => {
-        if (res.data.length > recipeWithReview.length) {
-          let lastIndex = recipeWithReview.length;
-          setRecipeWithReview((prevRecipe) => [...prevRecipe, res.data[lastIndex]]);
-          for (let i = 0; i < allRecipes.length; i++) {
-            if (allRecipes[i].id === recipeWithReview[lastIndex].recipe_id) {
-              allRecipes[i].review = recipeWithReview[lastIndex].review;
-            }
-          }
-        }
+    .get(`${DB_URL}/recipe/recipeReview`, accountId)
+    .then((res) => {
+      if (res.data.length > allRecipes.length) {
+        let lastIndex = allRecipes.length;
+        setAllRecipes((prevRecipe) => [...prevRecipe, res.data[lastIndex]]);
+        // for (let i = 0; i < allRecipes.length; i++) {
+        //   if (allRecipes[i].id == allRecipes[lastIndex].recipe_id) {
+        //     allRecipes[i].review = allRecipes[lastIndex].review;
+        //   }
+        // }
+      }
+      console.log("🔥🔥🔥🔥🔥🔥", allRecipes);
+      // console.log("🥣🥣🥣🥣🥣🥣", recipeWithReview);
+
       })
       .catch((error) => {
         console.log(error.response.data);
       });
-  }, [recipeWithReview]);
+  }, [allRecipes]);
 
+
+//   const test = [
+//     {
+//     id: 3,
+//     name: "Pasta",
+//     review: 1
+//     },
+//     {
+//       id: 3,
+//       name: "Pasta",
+//       review: undefined
+//       },
+//       {
+//         id: 3,
+//         name: "Pasta",
+//         review: 1
+//         },
+// ]
   return (
     <div className="OwnerRecipe">
       <main>
         <img src={dummy} alt="" />
         <div className="formArea_owRecipe">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          {/* <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="recipename">
               Recipe Name <span>*</span>
             </label>
@@ -110,21 +131,22 @@ const OwnerRecipe: React.FC = () => {
               {...register("name", { required: "this is required" })}
             />
             <button>Add</button>
-          </form>
+          </form> */}
         </div>
         <div className="textArea_owRecipe">
           <p>All Recipes Out There</p>
         </div>
 
         {allRecipes.reverse().map((recipe) => {
-          if (recipe.review) {
+        {/* {test.reverse().map((recipe) => { */}
+          if (recipe.review > 0) {
             return (
-              <div key={recipe.id} className="reviewArea_owRecipe">
+              <div key={recipe.recipe_id + "_" + recipe.name} className="reviewArea_owRecipe">
                 <p>{recipe.name}</p>
-                <label>
+                {/* <label> */}
                   <p>{"⭐️".repeat(recipe.review)}</p>
                   {" "}
-                  🍴 Review Request
+                  {/* 🍴 Review Request
                   <button
                     type="submit"
                     value={recipe.id}
@@ -134,17 +156,38 @@ const OwnerRecipe: React.FC = () => {
                     }}
                   >
                     submit
-                  </button>
-                </label>
+                  </button> */}
+                {/* </label> */}
+              </div>
+            );
+          } else if (recipe.review < 0){
+            return (
+              <div key={recipe.recipe_id + "_" + recipe.name} className="reviewArea_owRecipe">
+                <p>{recipe.name}</p>
+                {/* <label> */}
+                  <p>{"👎🏼".repeat(recipe.review * -1)}</p>
+                  {" "}
+                  {/* 🍴 Review Request
+                  <button
+                    type="submit"
+                    value={recipe.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setReviewRecipeId(recipe.id);
+                    }}
+                  >
+                    submit
+                  </button> */}
+                {/* </label> */}
               </div>
             );
           } else {
             return (
-              <div key={recipe.id} className="reviewArea_owRecipe">
+              <div key={recipe.recipe_id + "_" + recipe.name} className="reviewArea_owRecipe">
                 <p>{recipe.name}</p>
-                <label>
+                {/* <label> */}
                   {" "}
-                  🍴 Review Request
+                  {/* 🍴 Review Request
                   <button
                     type="submit"
                     value={recipe.id}
@@ -154,8 +197,8 @@ const OwnerRecipe: React.FC = () => {
                     }}
                   >
                     submit
-                  </button>
-                </label>
+                  </button> */}
+                {/* </label> */}
               </div>
             );
           }
