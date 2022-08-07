@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ButtonChild from "./components/Button";
+import logo from "./images/logo.png";
 
 const DB_URL = "https://taberu-server.herokuapp.com";
 // const DB_URL = "http://localhost:8080";
@@ -59,7 +60,9 @@ const OwnerMatchFamily: React.FC<Props> = ({ accountId }) => {
 
   return (
     <div className="OwnerMatchFamily">
-      <h1 className="logo">taberu</h1>
+      <h1 className="logo">
+        <img src={logo} alt="taberu" />
+      </h1>
       <main>
         {/* <h1 className="logo">Login</h1> */}
         <ButtonChild link={"/ChildMenu"} text={"Start as Family"} />

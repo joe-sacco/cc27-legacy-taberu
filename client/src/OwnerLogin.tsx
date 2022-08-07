@@ -3,6 +3,7 @@ import "./App.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logo from "./images/logo.png";
 
 const DB_URL = "https://taberu-server.herokuapp.com";
 // const DB_URL = "http://localhost:8080";
@@ -57,7 +58,9 @@ const OwnerLogin: React.FC<Props> = ({ setAccountId }) => {
   return (
     <div className="OwnerLogin">
       <main>
-        <h1 className="logo">taberu</h1>
+        <h1 className="logo">
+          <img src={logo} alt="taberu" />
+        </h1>
         <h2>Login</h2>
         <div className="formArea_owLogin">
           <form onSubmit={handleSubmit(onSubmit)}>
