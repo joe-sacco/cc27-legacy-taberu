@@ -17,4 +17,12 @@ module.exports = {
   createPlanMenu(data) {
     return knex.insert(data).into(DAILY_MENU_TABLE);
   },
+
+  getPlanMenu(receivedId) {
+    return knex
+      .select("recipe_id", "name", "date")
+      .from(DAILY_MENU_TABLE)
+      .where({ account_id: receivedId })
+      .join("recipe", "daily_menu.recipe_id", "=", "recipe.id");
+  },
 };
