@@ -60,7 +60,7 @@
 }
 
 .nameArea_owFamily {
-  width: 61%;
+  width: 460px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -68,7 +68,8 @@
 
 .nameAreaIn_owFamily p{
   display: block;
-  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
   margin: 0 10px 20px 0;
 }
 /* ChildMain */
