@@ -232,4 +232,10 @@
   .btuArea_top .button:last-of-type {
     margin: 20px auto 0;
   }
+
+  /* OwnerLoginMain */
+  .navi_owLoginMain {
+    width: 100%;
+    padding: 0 10px;
+  }
 }
