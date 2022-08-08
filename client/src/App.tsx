@@ -13,9 +13,9 @@ import OwnerFamily from "./OwnerFamily";
 import OwnerRecipe from "./OwnerRecipe";
 import AllRecipe from "./AllRecipe";
 import Header from "./components/Header";
-import "./components/Reset.css";
+import "./styles/Reset.css";
 import "./App.css";
-import "./components/Text.css";
+import "./styles/components/Text.css";
 import "./components/Header.css";
 
 function App() {
