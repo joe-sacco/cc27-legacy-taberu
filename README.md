@@ -92,6 +92,7 @@ To use this software you will need npm. To install run
   ```sh
   npm install npm@latest -g
   ```
+And postgres. After installing postrgess create database called "taberu".
 
 ### Installation
 
@@ -120,6 +121,10 @@ _After installing npm_
    And react in /client/
    ```js
    npm run start
+   ```
+4. Run migrations in /server/
+   ```js
+   npm run migrate
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
