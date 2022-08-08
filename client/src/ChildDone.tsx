@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonChild from "./components/Button";
-import "./components/images.css";
+import "./styles/components/images.css";
 import logo from "./images/logo.png";
 
 const ChildDone: React.FC = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
-import './button.css';
+import '../styles/components/button.css';
 
 type Props = {
   text: string;
