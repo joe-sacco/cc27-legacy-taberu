@@ -6,14 +6,6 @@
     "node": "16.15.1"
   },
   "dependencies": {
-    "npm": "^8.16.0",
-    "chai": "^4.3.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "knex": "^2.2.0",
-    "mocha": "^10.0.0",
-    "pg": "^8.7.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,6 +14,14 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "axios": "^0.27.2",
+    "chai": "^4.3.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "knex": "^2.2.0",
+    "mocha": "^10.0.0",
+    "npm": "^8.16.0",
+    "pg": "^8.7.3",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.8",
     "react-dom": "^18.2.0",
@@ -38,6 +38,8 @@
     "migrate-down": "cd client && npx knex migrate:rollback --all --knexfile ./knexfile.js",
     "migrate": "cd server && npx knex migrate:latest --knexfile ./knexfile.js",
     "seed": "cd server && npx knex seed:run --knexfile ./knexfile.js"
+  },
+  "devDependencies": {
+    "@types/react-burger-menu": "^2.8.3"
   }
 }
-
