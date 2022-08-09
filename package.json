@@ -38,5 +38,8 @@
     "migrate-down": "npx knex migrate:rollback --all --knexfile server/knexfile.js",
     "migrate": "npx knex migrate:latest --knexfile server/knexfile.js",
     "seed": "npx knex seed:run --knexfile server/knexfile.js"
+  },
+  "devDependencies": {
+    "@types/react-burger-menu": "^2.8.3"
   }
 }
