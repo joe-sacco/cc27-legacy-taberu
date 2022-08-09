@@ -3,8 +3,8 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.alterTable("account", function (table) {
-    table.string("image", 64);
+  return knex.schema.alterTable('account', function (table) {
+    table.string('image', 64);
   });
 };
 
@@ -13,7 +13,7 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.alterTable("account", function (table) {
-    table.dropColumn("image");
+  return knex.schema.alterTable('account', function (table) {
+    table.dropColumn('image');
   });
 };

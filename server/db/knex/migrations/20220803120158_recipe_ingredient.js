@@ -3,21 +3,21 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("recipe_ingredient", function (table) {
+  return knex.schema.createTable('recipe_ingredient', function (table) {
     table
-      .integer("recipe_id")
+      .integer('recipe_id')
       .notNullable()
-      .references("id")
-      .inTable("recipe")
-      .onDelete("CASCADE");
+      .references('id')
+      .inTable('recipe')
+      .onDelete('CASCADE');
     table
-      .integer("ingredient_id")
+      .integer('ingredient_id')
       .notNullable()
-      .references("id")
-      .inTable("ingredient")
-      .onDelete("CASCADE");
+      .references('id')
+      .inTable('ingredient')
+      .onDelete('CASCADE');
 
-    table.primary(["ingredient_id", "recipe_id"]);
+    table.primary(['ingredient_id', 'recipe_id']);
   });
 };
 
@@ -26,5 +26,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable("recipe_ingredient");
+  return knex.schema.dropTable('recipe_ingredient');
 };
