@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import { useForm } from "react-hook-form";
 
-const DB_URL = process.env.DATABASE_URL ? '' : "http://localhost:8080";
+const DB_URL = process.env.REACT_APP_DATABASE_URL ? '' : "http://localhost:8080";
 
 interface addFamily {
   last_name: string;

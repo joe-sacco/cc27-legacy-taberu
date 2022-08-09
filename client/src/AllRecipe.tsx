@@ -5,7 +5,7 @@ import "./App.css";
 import "./styles/components/form.css";
 import dummy from "./images/dummy.png";
 
-const DB_URL = process.env.DATABASE_URL ? '' : "http://localhost:8080";
+const DB_URL = process.env.REACT_APP_DATABASE_URL ? '' : "http://localhost:8080";
 
 interface addRecipe {
   name: string;

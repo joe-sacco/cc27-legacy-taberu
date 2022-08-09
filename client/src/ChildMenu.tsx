@@ -5,7 +5,7 @@ import "./App.css";
 import { useNavigate } from "react-router-dom";
 import logo from "./images/logo.png";
 
-const DB_URL = process.env.DATABASE_URL ? '' : "http://localhost:8080";
+const DB_URL = process.env.REACT_APP_DATABASE_URL ? '' : "http://localhost:8080";
 
 type Props = {
   account_id: number | undefined;
