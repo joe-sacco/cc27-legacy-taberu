@@ -106,3 +106,15 @@
 .reviewArea_chMainIn form label:first-of-type {
   margin: 0 60px 0 0;
 }
+
+/* tablet, sp */
+@media screen and (max-width: 767px) {
+  .formArea_owRecipe,
+  .formArea_owFamily,
+  .formArea_owRegist,
+  .formArea_owLogin,
+  .formArea_owMatchFamily {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

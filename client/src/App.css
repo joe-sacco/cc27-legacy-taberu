@@ -65,3 +65,18 @@ h1.logo img{
   width: 500px;
   margin: 30px auto 0;
 }
+
+/* tablet, sp */
+@media screen and (max-width: 767px) {
+  /* ChildeMain */
+  .reviewArea_chMain {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* ChildeMenu */
+  .nameArea_chMenu {
+    flex-direction: column;
+    width: 100%;
+  }
+}

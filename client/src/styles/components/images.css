@@ -29,3 +29,21 @@
   width: 500px;
   margin: 0 auto 50px;
 }
+
+/* tablet, sp */
+@media screen and (max-width: 767px) {
+  /* Owner Top */
+  .image_top{
+    width: 375px;
+    height: 375px;
+  }
+
+  .image_top img{
+    width: 300px;
+  }
+
+  /* OwnerRecipe */
+  .OwnerRecipe img {
+    width: 100%;
+  }
+}

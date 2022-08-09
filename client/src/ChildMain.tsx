@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./components/images.css";
+import "./styles/components/images.css";
 import dummy from "./images/dummy.png";
 import like from "./images/like.png";
 import dislike from "./images/dislike.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const DB_URL = "https://taberu-server.herokuapp.com";
-// const DB_URL = "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com";
+const DB_URL = "http://localhost:8080";
 
 const ChildMain: React.FC = () => {
   const navigate = useNavigate();

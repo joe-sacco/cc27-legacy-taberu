@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-import "./components/form.css";
+import "./styles/components/form.css";
 import dummy from "./images/dummy.png";
 
-const DB_URL = "https://taberu-server.herokuapp.com";
-// const DB_URL = "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com";
+const DB_URL = "http://localhost:8080";
 
 const OwnerRecipe: React.FC = () => {
   const [allRecipes, setAllRecipes] = useState<
