@@ -89,7 +89,7 @@
     display: inline-block;
     width: 90px;
     height: 90px;
-    background-image: url(../images/icon1_owLoginMain.png);
+    background-image: url(../../images/icon1_owLoginMain.png);
     background-size: contain;
     vertical-align: middle;
     background-repeat: no-repeat;
@@ -103,7 +103,7 @@
       display: inline-block;
       width: 90px;
       height: 90px;
-      background-image: url(../images/icon2_owLoginMain.png);
+      background-image: url(../../images/icon2_owLoginMain.png);
       background-size: contain;
       vertical-align: middle;
       background-repeat: no-repeat;
@@ -117,7 +117,7 @@
   display: inline-block;
   width: 90px;
   height: 90px;
-  background-image: url(../images/icon3_owLoginMain.png);
+  background-image: url(../../images/icon3_owLoginMain.png);
   background-size: contain;
   vertical-align: middle;
   background-repeat: no-repeat;
@@ -212,4 +212,30 @@
 
 .btnArea_chDone .button:last-of-type {
   background-color: rgb(229, 103, 29);
+}
+
+/* tablet, sp */
+@media screen and (max-width: 767px) {
+  /* OwnerTop */
+  .btuArea_top {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 60px auto 0;
+    width: 100%;
+  }
+
+  .btuArea_top .button {
+    margin: 0 auto;
+  }
+
+  .btuArea_top .button:last-of-type {
+    margin: 20px auto 0;
+  }
+
+  /* OwnerLoginMain */
+  .navi_owLoginMain {
+    width: 100%;
+    padding: 0 10px;
+  }
 }

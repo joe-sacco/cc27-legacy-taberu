@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./components/images.css";
+import "./styles/components/images.css";
 import dummy from "./images/dummy.png";
 import like from "./images/like.png";
 import dislike from "./images/dislike.png";
