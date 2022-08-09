@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "npm": "^8.16.0"
+  },
+  "scripts": {
+    "test": "mocha --exit",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "migrate-down": "cd client && npx knex migrate:rollback --all --knexfile ./knexfile.js",
+    "migrate": "cd server && npx knex migrate:latest --knexfile ./knexfile.js",
+    "seed": "cd server && npx knex seed:run --knexfile ./knexfile.js"
+  }
+}
+
