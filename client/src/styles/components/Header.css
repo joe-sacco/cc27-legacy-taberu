@@ -1,0 +1,26 @@
+.App-header {
+  background-color: #28B0D3;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header .logo {
+  width: 120px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.header h1.logo img {
+  vertical-align: middle;
+}
+
+.date {
+  text-align: center;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}

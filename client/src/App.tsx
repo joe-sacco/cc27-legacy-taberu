@@ -16,7 +16,7 @@ import Header from "./components/Header";
 import "./styles/Reset.css";
 import "./App.css";
 import "./styles/components/Text.css";
-import "./components/Header.css";
+import "./styles/components/Header.css";
 
 function App() {
   const [accountId, setAccountId] = useState<number | undefined>();
