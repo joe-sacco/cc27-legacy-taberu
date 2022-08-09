@@ -11,3 +11,4 @@
     "seed": "cd server && npx knex seed:run --knexfile ./knexfile.js"
   }
 }
+
