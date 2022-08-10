@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const accountRouter = require("./routes/account");
+const familyRouter = require("./routes/family");
+const recipeRouter = require("./routes/recipe");
+const path = require("path");
+
 const PORT = process.env.PORT || 8080;
 
 // app.use(express.json());
@@ -9,21 +14,21 @@ app.use(express.json({ extended: true, limit: '10mb' }));
 // const options = {
 //   origin: allowedOrigins
 // };
+
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.status(200).send("WELCOME TO TABERU SERVER 😋");
+app.use(express.static(path.join(__dirname, '../client/build'))); // create path to URL
+
+app.use('/', (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
+
+app.use("/account", accountRouter);
+
+app.use("/recipe", recipeRouter);
+
+app.use("/account/:id/family", familyRouter);
 
 app.listen(PORT, () => {
   console.log(`Server started on PORT: ${PORT}`);
 });
-
-const accountRouter = require("./routes/account");
-app.use("/account", accountRouter);
-
-const recipeRouter = require("./routes/recipe");
-app.use("/recipe", recipeRouter);
-
-const familyRouter = require("./routes/family");
-app.use("/account/:id/family", familyRouter);
