@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { useForm } from "react-hook-form";
-import "./App.css";
-import "./styles/components/form.css";
-import dummy from "./images/dummy.png";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import './App.css';
+import './styles/components/form.css';
+import dummy from './images/dummy.png';
 
-const DB_URL = process.env.REACT_APP_DATABASE_URL ? '' : "http://localhost:8080";
+const DB_URL = process.env.REACT_APP_DATABASE_URL
+  ? ''
+  : 'http://localhost:8080';
 
 interface addRecipe {
   name: string;
@@ -30,7 +32,7 @@ const OwnerRecipe: React.FC = () => {
       .catch((error) => {
         console.log(error.response.data);
       });
-  }, [allRecipes]);
+  }, []);
 
   const {
     register,
@@ -38,11 +40,11 @@ const OwnerRecipe: React.FC = () => {
     // formState: { errors },
   } = useForm<addRecipe>({
     defaultValues: {
-      name: "",
+      name: '',
     },
   });
 
-  const newRecipeInfo = { name: "" };
+  const newRecipeInfo = { name: '' };
   const onSubmit = (data: any) => {
     newRecipeInfo.name = data.name;
     setNewRecipe(newRecipeInfo);
@@ -53,7 +55,7 @@ const OwnerRecipe: React.FC = () => {
   }, [newRecipe]);
 
   const recipeRequestReview = {
-    account_id: Number(localStorage.getItem("account_id")),
+    account_id: Number(localStorage.getItem('account_id')),
     recipe_id: reviewRecipeId,
     review_request: true,
   };
@@ -64,49 +66,50 @@ const OwnerRecipe: React.FC = () => {
   }, [reviewRecipeId]);
 
   return (
-    <div className="OwnerRecipe">
+    <div className='OwnerRecipe'>
       <main>
-        <img src={dummy} alt="" />
-        <div className="formArea_owRecipe">
+        <img src={dummy} alt='' />
+        <div className='formArea_owRecipe'>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="recipename">
+            <label htmlFor='recipename'>
               Recipe Name <span>*</span>
             </label>
             <input
-              type="text"
-              id="recipename"
-              placeholder="Please put the recipe name"
-              {...register("name", { required: "this is required" })}
+              type='text'
+              id='recipename'
+              placeholder='Please put the recipe name'
+              {...register('name', { required: 'this is required' })}
             />
             <button>Add</button>
           </form>
         </div>
-        <div className="textArea_owRecipe">
+        <div className='textArea_owRecipe'>
           <h2>All Recipes</h2>
         </div>
 
-        <div className="reviewArea_owRecipe">
-          {allRecipes.reverse().map((recipe) => {
-            return (
-              <div key={recipe.id} className="reviewAreaIn_owRecipe">
-                <p>{recipe.name}</p>
-                <label>
-                  {" "}
-                  {/* 🍴 Review Request */}
-                  <button
-                    type="submit"
-                    value={recipe.id}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setReviewRecipeId(recipe.id);
-                    }}
-                  >
-                    Request Review
-                  </button>
-                </label>
-              </div>
-            );
-          })}
+        <div className='reviewArea_owRecipe'>
+          {allRecipes.length > 0 &&
+            allRecipes.reverse().map((recipe) => {
+              return (
+                <div key={recipe.id} className='reviewAreaIn_owRecipe'>
+                  <p>{recipe.name}</p>
+                  <label>
+                    {' '}
+                    {/* 🍴 Review Request */}
+                    <button
+                      type='submit'
+                      value={recipe.id}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setReviewRecipeId(recipe.id);
+                      }}
+                    >
+                      Request Review
+                    </button>
+                  </label>
+                </div>
+              );
+            })}
         </div>
       </main>
     </div>
