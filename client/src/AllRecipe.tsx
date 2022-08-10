@@ -6,8 +6,8 @@ import "./styles/components/form.css";
 import dummy from "./images/dummy.png";
 import Upload from "./components/Upload";
 
-// const DB_URL = "https://taberu-server.herokuapp.com";
-const DB_URL = "http://localhost:8080";
+const DB_URL = "https://taberu-server.herokuapp.com";
+// const DB_URL = "http://localhost:8080";
 
 interface addRecipe {
   name: string;
