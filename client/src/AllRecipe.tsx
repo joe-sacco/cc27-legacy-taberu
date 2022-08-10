@@ -4,9 +4,10 @@ import { useForm } from "react-hook-form";
 import "./App.css";
 import "./styles/components/form.css";
 import dummy from "./images/dummy.png";
+import Upload from "./components/Upload";
 
-const DB_URL = "https://taberu-server.herokuapp.com";
-// const DB_URL = "http://localhost:8080";
+// const DB_URL = "https://taberu-server.herokuapp.com";
+const DB_URL = "http://localhost:8080";
 
 interface addRecipe {
   name: string;
@@ -14,7 +15,10 @@ interface addRecipe {
 
 const OwnerRecipe: React.FC = () => {
   const [allRecipes, setAllRecipes] = useState<
-    { id: number; name: string; review: number | undefined }[]
+    {
+      picture_path: any;
+      id: number; name: string; review: number | undefined 
+}[]
   >([]);
   const [newRecipe, setNewRecipe] = useState<{ name: string }>();
   const [reviewRecipeId, setReviewRecipeId] = useState<number | undefined>();
@@ -43,9 +47,14 @@ const OwnerRecipe: React.FC = () => {
     },
   });
 
-  const newRecipeInfo = { name: "" };
+  const newRecipeInfo = { name: "", picture_path: "" };
   const onSubmit = (data: any) => {
     newRecipeInfo.name = data.name;
+
+    if (postFileData) {
+      newRecipeInfo.picture_path = postFileData.myFile;
+    }
+
     setNewRecipe(newRecipeInfo);
   };
 
@@ -64,10 +73,37 @@ const OwnerRecipe: React.FC = () => {
     }
   }, [reviewRecipeId]);
 
+  // upload image
+  const [postFileData, setPostFileData] = useState<{myFile?: any}>({})
+  const changeUploadFile = async (event: any) => {
+    const file = event.target.files[0];
+    const base64 = await convertToBase64(file);
+    setPostFileData({
+      ...postFileData,
+      myFile: base64,
+    });
+    event.target.value = '';
+  };
+
+  // convert base64
+  const convertToBase64 = (file: any) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
   return (
     <div className="OwnerRecipe">
       <main>
         <img src={dummy} alt="" />
+        <Upload name="image" onChange={changeUploadFile}>Upload image</Upload>
         <div className="formArea_owRecipe">
           <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="recipename">
@@ -88,9 +124,12 @@ const OwnerRecipe: React.FC = () => {
 
         <div className="reviewArea_owRecipe">
           {allRecipes.reverse().map((recipe) => {
+            let picture = recipe.picture_path;
+
             return (
               <div key={recipe.id} className="reviewAreaIn_owRecipe">
                 <p>{recipe.name}</p>
+                {recipe.picture_path ? (<img src={`${picture}`} alt="" />) : "" }
                 <label>
                   {" "}
                   {/* 🍴 Review Request */}

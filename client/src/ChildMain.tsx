@@ -13,7 +13,10 @@ const ChildMain: React.FC = () => {
   const navigate = useNavigate();
   const [review, setReview] = useState<{ recipe_id: number; review: number }>(); // review: -1 = dislike, 1 = like
   const [recipeToReview, setRecipeToReview] = useState<
-    { name: string; recipe_id: number }[]
+    {
+      picture_path: any;
+      name: string; recipe_id: number 
+}[]
   >([]);
 
   useEffect(() => {
@@ -71,12 +74,14 @@ const ChildMain: React.FC = () => {
         </div>
         <div className="reviewArea_chMain">
           {recipeToReview.map((recipe, i) => {
+            let picture = recipe.picture_path;
             return (
               <div
                 className="reviewAreaIn_chMain"
                 key={recipe.recipe_id + "_" + i}
               >
                 <p>{recipe.name}</p>
+                {recipe.picture_path ? (<img className="reviewAreaIn_chMainImg" src={`${picture}`} alt="" />) : "" }
                 <form>
                   <label>
                     <img src={like} alt="like" height={100} />
